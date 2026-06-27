@@ -147,7 +147,7 @@ export default function HomePage() {
         </section>
 
         <section className="bg-cream px-4 py-24 sm:px-6 lg:px-8">
-          <div className="reveal-on-scroll reveal-soft mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
             <SectionHeading eyebrow="Visit" title="Pull up on Bell Boulevard." text="Papazzio Restaurant is located at 39-38 Bell Boulevard in Bayside, NY." />
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
               <a className="button button-dark" href={site.mapsUrl}>Get Directions</a>
