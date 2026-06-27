@@ -48,7 +48,7 @@ export default function MenuPage() {
             <SectionHeading eyebrow="Menus" title="Dinner, lunch, tray, dessert, and wine." text="The Papazzio website lists dedicated dinner, lunch, tray, dessert, and wine menus." />
             <div className="mt-10 grid gap-4 md:grid-cols-5">
               {menuLinks.map((link) => (
-                <a className="menu-tile" href={link.href} id={link.href.split("#")[1]} key={link.href}>
+                <a className="menu-tile" href={link.href} key={link.href}>
                   <span>{link.label}</span>
                 </a>
               ))}
@@ -59,4 +59,3 @@ export default function MenuPage() {
     </PageShell>
   )
 }
-

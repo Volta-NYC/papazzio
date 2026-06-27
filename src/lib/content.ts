@@ -47,15 +47,16 @@ export const images = {
   winesday: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/1757629982088-SIRFUQQET07RSQVL55HY/unsplash-image-CPMZguYURMw.jpg",
   dolceNotte: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/1780874965327-LAE66TT3EWVLM5QMM5VC/unsplash-image-TIKNm-4v9Ew.jpg",
   steak: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/57a43176-1bfd-4eef-959f-c65a5551338a/Surf-and-Turf-For-Two-Featured-Image.jpg",
+  takeout: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/eca936bf-4fc8-4baa-9391-eae2adc6070e/DC0F58F3-AF50-46B0-9825-27B130A304CD.png",
   familyMeal: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/28e49e76-94f1-4e92-bdaa-50038660b8bf/unsplash-image-aFzg83dvnAI.jpg"
 }
 
 export const menuLinks = [
-  { label: "Dinner Menu", href: "/menu#dinner-menu" },
-  { label: "Lunch Menu", href: "/menu#lunch-menu" },
-  { label: "Tray Menu", href: "/menu#tray-menu" },
-  { label: "Dessert Menu", href: "/menu#dessert-menu" },
-  { label: "Wine Menu", href: "/menu#wine-menu" }
+  { label: "Dinner Menu", href: "/dinner-menu" },
+  { label: "Lunch Menu", href: "/lunch-menu" },
+  { label: "Tray Menu", href: "/tray-menu" },
+  { label: "Dessert Menu", href: "/dessert-menu" },
+  { label: "Wine Menu", href: "/wine-menu" }
 ]
 
 export const menuPreview = [
@@ -78,7 +79,7 @@ export const specials = [
     title: "Happy Hour 4-7 PM",
     subtitle: "50% Off All Wine by Glass and Beer",
     details: ["Seasonal Menu $10 items", "Weekdays Only", "No Holidays, no other offer"],
-    href: "/specials#happy-hour-4-7-pm",
+    href: "/happy-hour-menu",
     cta: "Visit Happy Hour Menu",
     image: images.happyHour
   },
@@ -86,7 +87,7 @@ export const specials = [
     title: "Winesdays",
     subtitle: "Wednesday",
     details: ["50% off all Wine Bottles", "OR", "BYOW -No Cork Fee- Bring your Own Wine", "Valid with one entree - no other promos"],
-    href: "/menu#wine-menu",
+    href: "/wine-menu",
     cta: "Wine Menu",
     image: images.winesday
   },
@@ -94,21 +95,34 @@ export const specials = [
     title: "Thursdays",
     subtitle: "La Dolce Notte",
     details: ["Fresh and New menu every season!", "No holidays"],
-    href: "/specials#thursdays",
+    href: "/seasonal-menu",
     cta: "Visit Menu Now!",
     image: images.dolceNotte
   },
   {
     title: "Sunday Steak Special",
-    subtitle: "$69",
+    subtitle: "$79",
     details: [
-      "Choose an appetizer",
+      "Choose an Appetizer: Mozzarella in Carrozza, Meatballs Marinara or Vodka Sauce, House or Caesar Salad, or Sliced Tomato & Mozzarella",
       "12 oz. Ribeye & Shrimp Scampi",
       "Select one side from menu",
-      "Choose a dessert",
+      "Choose a Dessert: Home-made Cheesecake, Tiramisu, Vanilla Ice Cream or Lemon Sorbet",
+      "Personal Promotion",
       "If sharing, a $10 charge applies"
     ],
     image: images.steak
+  },
+  {
+    title: "La Cena da Asporto",
+    subtitle: "Takeout Only",
+    details: [
+      "Choose One Appetizer to Share: House Salad, Caesar Salad, Fried Mozzarella, or Meatballs in Vodka Sauce",
+      "Choose Two Entrees: Chicken Parmigiana with Penne Pasta, Chicken Francese with sautéed vegetables, Penne Vodka with Chicken, Rigatoni Bolognese, Linguine & Meatballs, Eggplant Parmigiana with Penne Pasta, Linguine Garlic & Oil (with or without chicken), or Fettuccine Alfredo with Shrimp (+$6 upgrade)",
+      "Complete Your Dinner: Homemade Dessert Tiramisu, Cannoli, or Cheesecake +$5 each",
+      "375ml Sealed Bottle Perfect for two: Prosecco, Rosé, Sauvignon Blanc, or Cabernet Sauvignon +$20",
+      "Work With Us"
+    ],
+    image: images.takeout
   },
   {
     title: "Weekdays Family Meal",
@@ -116,9 +130,12 @@ export const specials = [
     details: [
       "Monday, Tuesday & Wednesday",
       "Take Out or Delivery",
-      "Choose an appetizer, pasta, and entree",
+      "Choose an Appetizer: House or Caesar Salad, Sliced Tomato & Mozzarella, Sautéed Vegetables, or Mashed Potatoes",
+      "Choose a Pasta: Penne alla Vodka, Penne Marinara, Linguine with Garlic & Oil, Rigatoni Fileto Pomodoro, or Fettucine Alfredo",
+      "Choose an Entree: Chicken Marsala, Chicken Francese, Chicken Parmesan, Chicken Picatta, or Sausage & Peppers",
       "Swap Chicken for Veal or Salmon for +$15",
-      "Holidays excluded. No combining offer."
+      "Holidays excluded",
+      "No combining offer"
     ],
     image: images.familyMeal
   }

@@ -16,7 +16,7 @@ export default function SpecialsPage() {
         <section className="px-4 pb-24 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8">
             {specials.map((special, index) => (
-              <article className={`special-panel ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`} key={special.title}>
+              <article className={`special-panel scroll-mt-28 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`} id={special.title.toLowerCase().replaceAll(" ", "-")} key={special.title}>
                 <div className={`relative min-h-[24rem] overflow-hidden ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                   <Photo alt={special.title} className="absolute inset-0" src={special.image} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/64 via-black/16 to-transparent" />
@@ -53,4 +53,3 @@ export default function SpecialsPage() {
     </PageShell>
   )
 }
-

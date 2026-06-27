@@ -108,7 +108,7 @@ export default function HomePage() {
               <SectionHeading eyebrow="Specials" light title="Seasonal offers, bold nights, and family meals." text="Papazzio's specials include happy hour, Winesdays, La Dolce Notte, Sunday steak, and weekday family meals." />
               <Link className="button button-light shrink-0" href="/specials">View Specials</Link>
             </div>
-            <div className="mt-12 grid gap-5 lg:grid-cols-5">
+            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {specials.map((item) => (
                 <Link className="special-mini group" href={item.href || "/specials"} key={item.title}>
                   <Photo alt={item.title} className="absolute inset-0 opacity-55 transition duration-500 group-hover:scale-105 group-hover:opacity-72" src={item.image} />
