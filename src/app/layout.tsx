@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Cormorant_Garamond, DM_Sans } from "next/font/google"
 
-import { site } from "@/lib/site"
+import { site } from "@/lib/content"
 
 import "./globals.css"
 
@@ -37,4 +37,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-

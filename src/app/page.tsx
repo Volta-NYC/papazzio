@@ -1,93 +1,172 @@
-import { Footer } from "@/components/footer"
-import { Nav } from "@/components/nav"
+import Link from "next/link"
 
-const menuHighlights = ["Wood-fired classics", "Seasonal pastas", "House cocktails"]
+import { PageShell } from "@/components/page-shell"
+import { Photo } from "@/components/photo"
+import { SectionHeading } from "@/components/section-heading"
+import { hours, images, menuPreview, reviews, site, specials, storyParagraphs } from "@/lib/content"
+
+const ticker = ["Authentic Italian cuisine", "Craft cocktails", "Wine and beer", "Gluten-Free dishes", "Bayside, Queens"]
 
 export default function HomePage() {
   return (
-    <>
-      <Nav />
+    <PageShell>
       <main>
-        <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_0.82fr]">
-          <div className="max-w-3xl">
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-tomato">Neighborhood Italian</p>
-            <h1 className="font-heading text-5xl font-semibold leading-[0.98] text-ink sm:text-7xl">
-              A warm table, a good glass, and something fresh from the oven.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-ink/70">
-              A flexible starter page for a restaurant website, ready for real copy, photography, menus, reservations, and location details.
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a className="rounded-full bg-tomato px-7 py-3.5 text-center font-semibold text-cream transition hover:bg-ink" href="#menu">
-                View Menu
-              </a>
-              <a className="rounded-full border border-ink/20 px-7 py-3.5 text-center font-semibold text-ink transition hover:border-tomato hover:text-tomato" href="#visit">
-                Plan a Visit
-              </a>
-            </div>
+        <section className="relative min-h-screen overflow-hidden bg-ink pt-24 text-cream">
+          <div className="absolute inset-0 opacity-42">
+            <Photo alt="Papazzio dining table" src={images.hero} />
           </div>
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,17,14,0.96),rgba(19,17,14,0.72),rgba(19,17,14,0.18))]" />
+          <div className="relative mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.8fr] lg:px-8">
+            <div>
+              <p className="eyebrow text-gold">Bayside, Queens · Est. 1990</p>
+              <h1 className="mt-5 max-w-5xl font-heading text-6xl font-black leading-[0.88] sm:text-8xl lg:text-9xl">
+                Join Us For Family Dinner
+              </h1>
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-cream/76">
+                At Papazzio's we serve authentic Italian cuisine, craft cocktails, wine and beer, as well as a fresh menu of Gluten-Free dishes in the comfort of your neighborhood.
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a className="button button-gold" href={site.orderUrl}>Order Online</a>
+                <Link className="button button-outline-light" href="/menu">View Menu</Link>
+                <a className="button button-ghost-light" href={site.phoneHref}>Call {site.phone}</a>
+              </div>
+            </div>
 
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-olive p-8 text-cream shadow-2xl shadow-ink/15">
-            <div className="absolute inset-x-8 top-8 h-28 rounded-full bg-cream/15 blur-2xl" />
-            <div className="relative flex h-full flex-col justify-between rounded-[1.5rem] border border-cream/25 p-7">
-              <p className="max-w-xs font-heading text-4xl font-semibold leading-tight">Starter block for hero photography or a featured dish.</p>
-              <div className="space-y-3">
-                {menuHighlights.map((item) => (
-                  <div className="flex items-center justify-between border-t border-cream/20 pt-3 text-sm uppercase tracking-[0.16em]" key={item}>
-                    <span>{item}</span>
-                    <span className="h-2 w-2 rounded-full bg-cream" />
-                  </div>
-                ))}
+            <div className="relative hidden lg:block">
+              <div className="rotate-2 overflow-hidden rounded-[2rem] border border-cream/20 bg-cream/8 p-3 shadow-2xl shadow-black/40">
+                <Photo alt="Papazzio plated dish" className="aspect-[4/5] rounded-[1.45rem]" src={images.plate} />
+              </div>
+              <div className="absolute -bottom-8 -left-10 max-w-xs -rotate-3 bg-tomato p-6 shadow-2xl shadow-black/35">
+                <p className="font-heading text-4xl font-black leading-none">Over 95%</p>
+                <p className="mt-2 text-sm font-bold uppercase tracking-[0.14em] text-cream/75">of dishes can be prepared gluten free</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-cream px-5 py-20 sm:px-8" id="menu">
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.7fr_1fr]">
+        <section className="overflow-hidden border-y border-ink bg-gold py-4 text-ink">
+          <div className="ticker-track flex min-w-max gap-8 text-sm font-black uppercase tracking-[0.22em]">
+            {[...ticker, ...ticker, ...ticker].map((item, index) => (
+              <span className="flex items-center gap-8" key={`${item}-${index}`}>
+                {item}
+                <span className="h-2 w-2 rounded-full bg-tomato" />
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-paper px-4 py-18 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
+            <InfoCard title="Find us" lines={[site.addressLine1, site.addressLine2]} />
+            <InfoCard title="Hours" lines={hours.map((item) => `${item.label}: ${item.value}`)} />
+            <InfoCard title="Reach us" lines={[site.email, site.phone]} />
+          </div>
+        </section>
+
+        <section className="bg-cream px-4 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.85fr_1fr] lg:items-center">
             <div>
-              <h2 className="font-heading text-4xl font-semibold text-ink sm:text-5xl">Menu Preview</h2>
-              <p className="mt-4 max-w-md leading-7 text-ink/70">
-                Replace these starter cards with real dishes, prices, categories, or online ordering links.
-              </p>
+              <SectionHeading eyebrow="About" title="A Bell Boulevard restaurant with a family legacy." text={storyParagraphs.slice(0, 3).join(" ")} />
+              <Link className="button button-dark mt-8" href="/contact">Reserve a Table</Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {["Antipasti", "Pasta", "Pizza"].map((item) => (
-                <article className="rounded-2xl border border-ink/10 bg-paper p-6" key={item}>
-                  <h3 className="font-heading text-2xl font-semibold">{item}</h3>
-                  <p className="mt-3 text-sm leading-6 text-ink/65">Short description, featured item, or category callout.</p>
+            <div className="relative">
+              <div className="overflow-hidden rounded-[2rem] border-8 border-paper shadow-2xl shadow-ink/18">
+                <Photo alt="Papazzio restaurant interior" className="aspect-[5/4]" src={images.diningRoom} />
+              </div>
+              <div className="absolute -bottom-8 right-8 max-w-sm bg-ink p-6 text-cream">
+                <p className="font-heading text-3xl font-black leading-tight">Luis Alfaro has led the culinary team for over two decades.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-ink px-4 py-24 text-cream sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <SectionHeading eyebrow="Our Menu" light title="Finest and freshest ingredients." text="At Papazzio we strive to use only the finest and freshest ingredients. Our goal is excellent service and delicious food for everyone who enters our door." />
+              <Link className="button button-gold shrink-0" href="/menu">See Menus</Link>
+            </div>
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {menuPreview.map((group, index) => (
+                <article className="group border border-cream/14 bg-cream/[0.04] p-7 transition hover:-translate-y-1 hover:bg-cream/[0.08]" key={group.title}>
+                  <p className="font-heading text-6xl font-black text-tomato/80">0{index + 1}</p>
+                  <h3 className="mt-6 font-heading text-3xl font-black">{group.title}</h3>
+                  <ul className="mt-5 space-y-3 text-sm leading-6 text-cream/70">
+                    {group.items.map((item) => (
+                      <li className="border-t border-cream/12 pt-3" key={item}>{item}</li>
+                    ))}
+                  </ul>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2" id="about">
-          <div className="rounded-[2rem] bg-tomato p-8 text-cream">
-            <p className="font-heading text-4xl font-semibold leading-tight">A simple reusable section for brand story, private dining, or catering.</p>
-          </div>
-          <div className="self-center">
-            <h2 className="font-heading text-4xl font-semibold">Ready for content</h2>
-            <p className="mt-5 leading-8 text-ink/70">
-              The template includes global design tokens, app-router structure, metadata, navigation, a homepage composition, and responsive Tailwind styling.
-            </p>
+        <section className="bg-tomato px-4 py-24 text-cream sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <SectionHeading eyebrow="Specials" light title="Seasonal offers, bold nights, and family meals." text="Papazzio's specials include happy hour, Winesdays, La Dolce Notte, Sunday steak, and weekday family meals." />
+              <Link className="button button-light shrink-0" href="/specials">View Specials</Link>
+            </div>
+            <div className="mt-12 grid gap-5 lg:grid-cols-5">
+              {specials.map((item) => (
+                <Link className="special-mini group" href={item.href || "/specials"} key={item.title}>
+                  <Photo alt={item.title} className="absolute inset-0 opacity-55 transition duration-500 group-hover:scale-105 group-hover:opacity-72" src={item.image} />
+                  <span className="relative mt-auto block">
+                    <span className="block text-xs font-black uppercase tracking-[0.2em] text-gold">{item.subtitle}</span>
+                    <span className="mt-2 block font-heading text-3xl font-black leading-none">{item.title}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="border-t border-ink/10 px-5 py-16 sm:px-8" id="visit">
-          <div className="mx-auto flex max-w-6xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h2 className="font-heading text-4xl font-semibold">Visit Us</h2>
-              <p className="mt-3 text-ink/70">Address, hours, phone, and reservation links can live here.</p>
+        <section className="bg-paper px-4 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1fr]">
+            <SectionHeading eyebrow="Kind Words" title="Cozy, warm ambience and friendly service." text="Papazzio shares guest notes from diners, catering customers, and gluten-free guests." />
+            <div className="grid gap-5">
+              {reviews.map((review) => (
+                <blockquote className="border-l-4 border-tomato bg-cream p-6 shadow-lg shadow-ink/5" key={review.author}>
+                  <p className="text-lg leading-8 text-ink/78">"{review.quote}"</p>
+                  <cite className="mt-4 block text-sm font-black uppercase tracking-[0.18em] text-tomato">- {review.author}</cite>
+                </blockquote>
+              ))}
             </div>
-            <a className="rounded-full bg-ink px-7 py-3.5 text-center font-semibold text-cream transition hover:bg-tomato" href="mailto:hello@example.com">
-              Contact
-            </a>
+          </div>
+        </section>
+
+        <section className="grid bg-black md:grid-cols-4">
+          {[images.pasta, images.oysters, images.wineRoom, images.cateringParty].map((src, index) => (
+            <div className="aspect-[4/5] overflow-hidden" key={src}>
+              <Photo alt={`Papazzio gallery image ${index + 1}`} className="transition duration-700 hover:scale-105" src={src} />
+            </div>
+          ))}
+        </section>
+
+        <section className="bg-cream px-4 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+            <SectionHeading eyebrow="Visit" title="Pull up on Bell Boulevard." text="Papazzio Restaurant is located at 39-38 Bell Boulevard in Bayside, NY." />
+            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <a className="button button-dark" href={site.mapsUrl}>Get Directions</a>
+              <a className="button button-outline-dark" href={site.phoneHref}>Call {site.phone}</a>
+            </div>
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+    </PageShell>
   )
 }
 
+function InfoCard({ lines, title }: { lines: string[]; title: string }) {
+  return (
+    <article className="border border-ink bg-cream p-6 shadow-[8px_8px_0_#1f1b16]">
+      <p className="text-xs font-black uppercase tracking-[0.22em] text-tomato">{title}</p>
+      <div className="mt-4 space-y-1 font-heading text-2xl font-black leading-tight text-ink">
+        {lines.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
+    </article>
+  )
+}

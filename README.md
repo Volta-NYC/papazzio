@@ -1,6 +1,6 @@
 # Papazzio
 
-Starter website scaffold for Papazzio built with Next.js, React, TypeScript, and Tailwind CSS.
+Papazzio restaurant website built with Next.js, React, TypeScript, and Tailwind CSS.
 
 ## Commands
 
@@ -9,4 +9,3 @@ npm install
 npm run dev
 npm run build
 ```
-

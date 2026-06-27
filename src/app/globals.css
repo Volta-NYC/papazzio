@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #fbf7ef;
-  --color-primary: #1d1b18;
+  --color-background: #f4ead6;
+  --color-primary: #1f1b16;
 }
 
 * {
@@ -18,13 +18,184 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-primary);
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 ::selection {
   background: #b53a2d;
   color: #fffaf0;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.button {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 900;
+  justify-content: center;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  min-height: 3rem;
+  padding: 1rem 1.35rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition-duration: 200ms;
+  transition-property: background-color, border-color, color, transform;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-gold {
+  background: #f0c35a;
+  color: #1f1b16;
+}
+
+.button-gold:hover {
+  background: #fff8e8;
+}
+
+.button-dark {
+  background: #1f1b16;
+  color: #fff8e8;
+}
+
+.button-dark:hover {
+  background: #b53a2d;
+}
+
+.button-light {
+  background: #fff8e8;
+  color: #1f1b16;
+}
+
+.button-light:hover {
+  background: #f0c35a;
+}
+
+.button-outline-light {
+  border: 1px solid rgb(255 248 232 / 0.42);
+  color: #fff8e8;
+}
+
+.button-outline-light:hover {
+  background: #fff8e8;
+  color: #1f1b16;
+}
+
+.button-outline-dark {
+  border: 1px solid rgb(31 27 22 / 0.32);
+  color: #1f1b16;
+}
+
+.button-outline-dark:hover {
+  background: #1f1b16;
+  color: #fff8e8;
+}
+
+.button-ghost-light {
+  color: #fff8e8;
+}
+
+.button-ghost-light:hover {
+  color: #f0c35a;
+}
+
+.footer-title {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(240 195 90 / 0.9);
+}
+
+.ticker-track {
+  animation: ticker 26s linear infinite;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+.special-mini {
+  align-items: flex-end;
+  background: #1f1b16;
+  color: #fff8e8;
+  display: flex;
+  min-height: 22rem;
+  overflow: hidden;
+  padding: 1.25rem;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.special-mini::after {
+  background: linear-gradient(to top, rgb(0 0 0 / 0.78), rgb(0 0 0 / 0.08));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.special-panel {
+  display: grid;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .special-panel {
+    grid-template-columns: 0.92fr 1.08fr;
+  }
+}
+
+.menu-tile {
+  align-items: end;
+  background: #1f1b16;
+  color: #fff8e8;
+  display: flex;
+  font-family: var(--font-heading-family), Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  min-height: 11rem;
+  padding: 1.25rem;
+  transition: background-color 200ms, color 200ms, transform 200ms;
+  min-width: 0;
+}
+
+.special-mini img,
+.special-panel img {
+  height: 100%;
+  max-width: none;
+  width: 100%;
+}
+
+.menu-tile:hover {
+  background: #b53a2d;
+  color: #fff8e8;
+  transform: translateY(-2px);
 }
