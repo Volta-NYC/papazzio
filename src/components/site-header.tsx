@@ -15,8 +15,8 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-7 text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-cream/72 lg:flex" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <Link className="transition hover:text-white" href={item.href} key={item.href}>
-              {item.label}
+            <Link className="nav-link" href={item.href} key={item.href}>
+              <span>{item.label}</span>
             </Link>
           ))}
         </nav>
