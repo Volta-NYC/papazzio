@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #fbf7ef;
+  --color-primary: #1d1b18;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #b53a2d;
+  color: #fffaf0;
+}
