@@ -4,6 +4,26 @@ import { SectionHeading } from "@/components/section-heading"
 import { catering, images, site } from "@/lib/content"
 
 const eventTypes = ["Showers", "Birthdays", "Graduations", "Christenings", "Communions"]
+const cateringCards = [
+  {
+    eyebrow: "On-site Events",
+    href: "/gallery-2",
+    image: images.cateringParty,
+    title: catering.onSiteLabel
+  },
+  {
+    eyebrow: "Take-home trays",
+    href: "/tray-menu",
+    image: images.pasta,
+    title: "Tray Menu"
+  },
+  {
+    eyebrow: "Off-site catering",
+    href: site.cateringExternalUrl,
+    image: images.plate,
+    title: catering.offSiteLabel
+  }
+]
 
 export default function CateringPage() {
   return (
@@ -32,7 +52,7 @@ export default function CateringPage() {
           </div>
         </section>
 
-        <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <section className="reveal-on-scroll px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1fr] lg:items-center">
             <div className="relative">
               <div className="overflow-hidden rounded-[1.5rem] shadow-2xl shadow-ink/18">
@@ -44,7 +64,7 @@ export default function CateringPage() {
               </div>
             </div>
 
-            <div className="pt-10 lg:pt-0">
+            <div className="reveal-on-scroll pt-10 lg:pt-0">
               <SectionHeading title="Packages, parties, and trays." text={catering.paragraphs.slice(2).join(" ")} />
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 <Feature title="Included" text="Coffee, tea, soda, and an Occasion Cake are included in party packages." />
@@ -56,20 +76,15 @@ export default function CateringPage() {
           </div>
         </section>
 
-        <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
+        <section className="reveal-on-scroll bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
-            <a className="catering-card" href="/gallery-2">
-              <span>On-site Events</span>
-              <strong>{catering.onSiteLabel}</strong>
-            </a>
-            <a className="catering-card" href="/tray-menu">
-              <span>Take-home trays</span>
-              <strong>Tray Menu</strong>
-            </a>
-            <a className="catering-card" href={site.cateringExternalUrl}>
-              <span>Off-site catering</span>
-              <strong>{catering.offSiteLabel}</strong>
-            </a>
+            {cateringCards.map((card) => (
+              <a className="catering-card reveal-on-scroll" href={card.href} key={card.title}>
+                <Photo alt={card.title} className="absolute inset-0 transition duration-700" src={card.image} />
+                <span>{card.eyebrow}</span>
+                <strong>{card.title}</strong>
+              </a>
+            ))}
           </div>
         </section>
       </main>
@@ -79,7 +94,7 @@ export default function CateringPage() {
 
 function Feature({ text, title }: { text: string; title: string }) {
   return (
-    <article className="border-l-4 border-tomato bg-cream p-5 shadow-lg shadow-ink/5">
+    <article className="reveal-on-scroll border-l-4 border-tomato bg-cream p-5 shadow-lg shadow-ink/5">
       <h2 className="font-heading text-2xl font-black">{title}</h2>
       <p className="mt-2 text-sm font-semibold leading-6 text-ink/68">{text}</p>
     </article>

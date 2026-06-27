@@ -231,6 +231,43 @@ img {
   transform: translateY(-2px);
 }
 
+.menu-image-tile {
+  align-items: end;
+  background: #1f1b16;
+  color: #fff8e8;
+  display: flex;
+  min-height: 18rem;
+  overflow: hidden;
+  padding: 1.35rem;
+  position: relative;
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.menu-image-tile::after {
+  background: linear-gradient(to top, rgb(0 0 0 / 0.8), rgb(0 0 0 / 0.16) 58%, rgb(0 0 0 / 0.05));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.menu-image-tile span {
+  font-family: var(--font-heading-family), Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-image-tile:hover {
+  box-shadow: 10px 10px 0 #b53a2d;
+  transform: translateY(-5px);
+}
+
+.menu-image-tile:hover img {
+  transform: scale(1.1);
+}
+
 .menu-section {
   background: #fff8e8;
   border: 1px solid rgb(31 27 22 / 0.12);
@@ -300,8 +337,21 @@ img {
   flex-direction: column;
   justify-content: space-between;
   min-height: 14rem;
+  overflow: hidden;
   padding: 1.5rem;
+  position: relative;
   transition: background-color 220ms ease, color 220ms ease, transform 220ms ease;
+}
+
+.catering-card::after {
+  background: linear-gradient(to top, rgb(0 0 0 / 0.82), rgb(0 0 0 / 0.28));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.catering-card img {
+  opacity: 0.72;
 }
 
 .catering-card span {
@@ -309,17 +359,58 @@ img {
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.2em;
+  position: relative;
   text-transform: uppercase;
+  z-index: 1;
 }
 
 .catering-card strong {
   font-family: var(--font-heading-family), Georgia, serif;
   font-size: clamp(2rem, 5vw, 3.6rem);
   line-height: 0.95;
+  position: relative;
+  z-index: 1;
 }
 
 .catering-card:hover {
-  background: #b53a2d;
   color: #fff8e8;
   transform: translateY(-4px);
+}
+
+.catering-card:hover img {
+  transform: scale(1.08);
+}
+
+.reveal-on-scroll {
+  animation: reveal-on-scroll both;
+  animation-range: entry 8% cover 30%;
+  animation-timeline: view();
+}
+
+@keyframes reveal-on-scroll {
+  from {
+    opacity: 0;
+    transform: translateY(34px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    animation: none;
+  }
+
+  .ticker-track {
+    animation: none;
+  }
+
+  .nav-link,
+  .button,
+  .menu-image-tile,
+  .catering-card {
+    transition: none;
+  }
 }
