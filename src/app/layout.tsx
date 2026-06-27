@@ -29,12 +29,15 @@ export const metadata: Metadata = {
     title: site.name,
     description: site.description,
     type: "website"
+  },
+  other: {
+    google: "notranslate"
   }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html className="notranslate" lang="en" translate="no">
       <body className={`${headingFont.variable} ${bodyFont.variable} bg-paper font-body text-ink antialiased`}>
         {children}
       </body>

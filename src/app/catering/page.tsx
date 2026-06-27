@@ -43,8 +43,8 @@ export default function CateringPage() {
               </div>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
-              {eventTypes.map((event) => (
-                <div className="border border-cream/14 bg-cream/[0.06] p-5" key={event}>
+              {eventTypes.map((event, index) => (
+                <div className={`reveal-on-scroll ${index % 2 === 0 ? "reveal-left" : "reveal-right"} ${index > 1 ? "reveal-delay-1" : ""} border border-cream/14 bg-cream/[0.06] p-5`} key={event}>
                   <p className="font-heading text-3xl font-black">{event}</p>
                 </div>
               ))}
@@ -52,9 +52,9 @@ export default function CateringPage() {
           </div>
         </section>
 
-        <section className="reveal-on-scroll px-4 py-24 sm:px-6 lg:px-8">
+        <section className="reveal-on-scroll reveal-soft px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1fr] lg:items-center">
-            <div className="relative">
+            <div className="reveal-on-scroll reveal-left relative">
               <div className="overflow-hidden rounded-[1.5rem] shadow-2xl shadow-ink/18">
                 <Photo alt="Papazzio event table" className="aspect-[4/5]" src={images.cateringParty} />
               </div>
@@ -64,22 +64,22 @@ export default function CateringPage() {
               </div>
             </div>
 
-            <div className="reveal-on-scroll pt-10 lg:pt-0">
+            <div className="reveal-on-scroll reveal-right pt-10 lg:pt-0">
               <SectionHeading title="Packages, parties, and trays." text={catering.paragraphs.slice(2).join(" ")} />
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <Feature title="Included" text="Coffee, tea, soda, and an Occasion Cake are included in party packages." />
-                <Feature title="Customizable" text="Menus can be customized by adding appetizers and bar options." />
-                <Feature title="Planning" text={catering.managerText} />
-                <Feature title="At home" text="Tray Menu options are available for take-home catering." />
+                <Feature className="reveal-left" title="Included" text="Coffee, tea, soda, and an Occasion Cake are included in party packages." />
+                <Feature className="reveal-right reveal-delay-1" title="Customizable" text="Menus can be customized by adding appetizers and bar options." />
+                <Feature className="reveal-left reveal-delay-1" title="Planning" text={catering.managerText} />
+                <Feature className="reveal-right reveal-delay-2" title="At home" text="Tray Menu options are available for take-home catering." />
               </div>
             </div>
           </div>
         </section>
 
-        <section className="reveal-on-scroll bg-cream px-4 py-20 sm:px-6 lg:px-8">
+        <section className="reveal-on-scroll reveal-soft bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
-            {cateringCards.map((card) => (
-              <a className="catering-card reveal-on-scroll" href={card.href} key={card.title}>
+            {cateringCards.map((card, index) => (
+              <a className={`catering-card reveal-on-scroll ${index === 0 ? "reveal-left" : index === 1 ? "reveal-soft reveal-delay-1" : "reveal-right reveal-delay-2"}`} href={card.href} key={card.title}>
                 <Photo alt={card.title} className="absolute inset-0 transition duration-700" src={card.image} />
                 <span>{card.eyebrow}</span>
                 <strong>{card.title}</strong>
@@ -92,9 +92,9 @@ export default function CateringPage() {
   )
 }
 
-function Feature({ text, title }: { text: string; title: string }) {
+function Feature({ className = "", text, title }: { className?: string; text: string; title: string }) {
   return (
-    <article className="reveal-on-scroll border-l-4 border-tomato bg-cream p-5 shadow-lg shadow-ink/5">
+    <article className={`reveal-on-scroll border-l-4 border-tomato bg-cream p-5 shadow-lg shadow-ink/5 ${className}`}>
       <h2 className="font-heading text-2xl font-black">{title}</h2>
       <p className="mt-2 text-sm font-semibold leading-6 text-ink/68">{text}</p>
     </article>

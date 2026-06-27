@@ -36,14 +36,14 @@ export default function MenuPage() {
           </div>
         </section>
 
-        <section className="reveal-on-scroll px-4 py-20 sm:px-6 lg:px-8">
+        <section className="reveal-on-scroll reveal-soft px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.7fr_1fr]">
-            <div>
+            <div className="reveal-on-scroll reveal-left">
               <SectionHeading title="Gluten Free Menu Available." text="For celiac and gluten intolerant customers, Papazzio offers a large selection of gluten-free options. Anything with a GF indicates it is available gluten-free. Please be sure to let your server know you are ordering gluten-free." />
             </div>
             <div className="grid gap-5 md:grid-cols-3">
-              {menuPreview.map((group) => (
-                <article className="reveal-on-scroll bg-cream p-7 shadow-[8px_8px_0_#b53a2d]" key={group.title} id={`${group.title.toLowerCase()}-menu`}>
+              {menuPreview.map((group, index) => (
+                <article className={`reveal-on-scroll ${index === 0 ? "reveal-left" : index === 1 ? "reveal-soft reveal-delay-1" : "reveal-right reveal-delay-2"} bg-cream p-7 shadow-[8px_8px_0_#b53a2d]`} key={group.title} id={`${group.title.toLowerCase()}-menu`}>
                   <h2 className="font-heading text-4xl font-black">{group.title}</h2>
                   <ul className="mt-6 space-y-4 text-sm font-bold leading-6 text-ink/70">
                     {group.items.map((item) => (
@@ -56,12 +56,12 @@ export default function MenuPage() {
           </div>
         </section>
 
-        <section className="reveal-on-scroll bg-cream px-4 py-20 sm:px-6 lg:px-8">
+        <section className="reveal-on-scroll reveal-soft bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionHeading eyebrow="Menus" title="Dinner, lunch, tray, dessert, and wine." text="The Papazzio website lists dedicated dinner, lunch, tray, dessert, and wine menus." />
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-              {menuTiles.map((link) => (
-                <a className="menu-image-tile reveal-on-scroll" href={link.href} key={link.href}>
+              {menuTiles.map((link, index) => (
+                <a className={`menu-image-tile reveal-on-scroll ${index % 2 === 0 ? "reveal-left" : "reveal-right"} ${index > 1 ? "reveal-delay-1" : ""}`} href={link.href} key={link.href}>
                   <Photo alt={link.label} className="absolute inset-0 transition duration-700 group-hover:scale-110" src={link.image} />
                   <span>{link.label}</span>
                 </a>

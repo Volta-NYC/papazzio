@@ -12,6 +12,7 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -382,19 +383,49 @@ img {
 }
 
 .reveal-on-scroll {
+  --reveal-blur: 7px;
+  --reveal-scale: 0.985;
+  --reveal-x: 0px;
+  --reveal-y: 34px;
   animation: reveal-on-scroll both;
-  animation-range: entry 8% cover 30%;
+  animation-range: entry 8% cover 32%;
   animation-timeline: view();
+}
+
+.reveal-left {
+  --reveal-x: -42px;
+  --reveal-y: 12px;
+}
+
+.reveal-right {
+  --reveal-x: 42px;
+  --reveal-y: 12px;
+}
+
+.reveal-soft {
+  --reveal-blur: 4px;
+  --reveal-scale: 0.975;
+  --reveal-y: 18px;
+}
+
+.reveal-delay-1 {
+  animation-range: entry 12% cover 35%;
+}
+
+.reveal-delay-2 {
+  animation-range: entry 16% cover 38%;
 }
 
 @keyframes reveal-on-scroll {
   from {
+    filter: blur(var(--reveal-blur));
     opacity: 0;
-    transform: translateY(34px) scale(0.985);
+    transform: translate3d(var(--reveal-x), var(--reveal-y), 0) scale(var(--reveal-scale));
   }
   to {
+    filter: blur(0);
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -412,5 +443,13 @@ img {
   .menu-image-tile,
   .catering-card {
     transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .reveal-left,
+  .reveal-right {
+    --reveal-x: 0px;
+    --reveal-y: 28px;
   }
 }
