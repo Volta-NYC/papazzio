@@ -251,6 +251,14 @@ function lineBreaks(content: string, slug: string) {
 
 function parseLine(line: string, slug: string): MenuLine {
   if (slug === "dessert-menu") {
+    if (line.startsWith("*Ala Mode")) {
+      return {
+        description: "Vanilla or Chocolate",
+        price: "+$2",
+        title: "A la Mode"
+      }
+    }
+
     const dessertItem = dessertItems.find((item) => line === item || line.startsWith(`${item} `))
 
     if (dessertItem) {
