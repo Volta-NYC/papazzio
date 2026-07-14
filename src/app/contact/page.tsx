@@ -17,7 +17,7 @@ export default function ContactPage() {
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a className="button button-gold" href={site.phoneHref}>Call {site.phone}</a>
-                <a className="button button-outline-light" href={site.mapsUrl}>Get Directions</a>
+                <a className="button button-outline-light" href={site.mapsUrl} rel="noreferrer" target="_blank">Get Directions</a>
               </div>
             </div>
           </div>
@@ -49,6 +49,17 @@ export default function ContactPage() {
                   ))}
                 </div>
               </article>
+            </div>
+            <div className="lg:col-span-2">
+              <div className="map-frame">
+                <iframe
+                  aria-label="Papazzio on Google Maps"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={site.mapsEmbedUrl}
+                  title="Papazzio map"
+                />
+              </div>
             </div>
           </div>
         </section>

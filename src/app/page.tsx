@@ -67,7 +67,7 @@ export default function HomePage() {
 
         <section className="bg-cream px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.35fr_1fr] lg:items-center">
-            <div className="reveal-on-scroll reveal-left mx-auto max-w-56 overflow-hidden rounded-full border border-ink/10 bg-white p-4 shadow-xl shadow-ink/10 lg:mx-0">
+            <div className="okgf-badge reveal-on-scroll reveal-left mx-auto lg:mx-0">
               <img alt="OKGF Certified Gluten-Free Celiac Safe" className="h-full w-full object-contain" src={images.okgf} />
             </div>
             <div className="reveal-on-scroll reveal-right">
@@ -84,7 +84,7 @@ export default function HomePage() {
               <Link className="button button-dark mt-8" href="/contact">Reserve a Table</Link>
             </div>
             <div className="reveal-on-scroll reveal-right relative">
-              <div className="overflow-hidden rounded-[2rem] border-8 border-paper shadow-2xl shadow-ink/18">
+              <div className="about-image-frame">
                 <Photo alt="Papazzio restaurant interior" className="aspect-[5/4]" src={images.diningRoom} />
               </div>
               <div className="absolute -bottom-8 right-8 max-w-sm bg-ink p-6 text-cream">
@@ -166,8 +166,19 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
             <SectionHeading eyebrow="Visit" title="Pull up on Bell Boulevard." text="Papazzio Restaurant is located at 39-38 Bell Boulevard in Bayside, NY." />
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <a className="button button-dark" href={site.mapsUrl}>Get Directions</a>
+              <a className="button button-dark" href={site.mapsUrl} rel="noreferrer" target="_blank">Get Directions</a>
               <a className="button button-outline-dark" href={site.phoneHref}>Call {site.phone}</a>
+            </div>
+          </div>
+          <div className="mx-auto mt-12 max-w-7xl">
+            <div className="map-frame">
+              <iframe
+                aria-label="Papazzio on Google Maps"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src={site.mapsEmbedUrl}
+                title="Papazzio map"
+              />
             </div>
           </div>
         </section>

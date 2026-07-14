@@ -16,6 +16,8 @@ export const site = {
   googleReviewsUrl:
     "https://www.google.com/search?q=Papazzio+Restaurant+%26+Caterer+Reviews",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=39-38+Bell+Boulevard+Bayside+NY+11361",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=39-38%20Bell%20Boulevard%20Bayside%20NY%2011361&output=embed",
   cateringExternalUrl: "https://papazziocatering.com/"
 }
 
@@ -184,17 +186,17 @@ export const catering = {
 export const reviews = [
   {
     quote:
-      "We went this past Wednesday for lunch and were very pleasantly surprised by the cozy, warm ambience, the very friendly staff and the wonderful food.",
-    author: "German"
+      "We were very pleasantly surprised by the cozy, warm ambience, the very friendly staff and the wonderful food.",
+    author: "Lunch guest"
   },
   {
     quote:
-      "Both Danny and Cathy were accommodating to our needs, easy to get in touch with, and flexible to our requests and to some last minute changes.",
-    author: "Stephanie"
+      "Danny and Cathy were accommodating, easy to get in touch with, and flexible with our requests and last minute changes.",
+    author: "Catering guest"
   },
   {
     quote:
-      "It is great to visit a restaurant that I dont have to worry about getting sick.",
-    author: "John"
+      "It is great to visit a restaurant where I do not have to worry about getting sick.",
+    author: "Gluten-free guest"
   }
 ]

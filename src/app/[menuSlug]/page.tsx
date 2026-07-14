@@ -51,6 +51,25 @@ const baseSectionHeadings = [
 
 const wineSectionHeadings = ["Spumante", "Bianco", "Rosso Italiano", "Rosso Americano"]
 
+const dessertItems = [
+  "Chocolate Oreo Mousse Cake",
+  "Homemade Cheesecake",
+  "Tiramisu",
+  "Homemade Cinnamon Apple Tart",
+  "Spumoni Tartufo",
+  "Affogato",
+  "Cannoli",
+  "Brownie",
+  "Gluten Free Brownie GF",
+  "Gluten Free Cannoli GF",
+  "Gluten Free Cheesecake GF",
+  "Gluten Free Tiramisu GF",
+  "Gluten Free Oreo Mousse GF",
+  "Lemon Sorbet GF",
+  "Ice Cream GF",
+  "*Ala Mode"
+]
+
 const introLabels = [
   "Small trays",
   "All tray orders",
@@ -186,7 +205,7 @@ function parseMenu(content: string, fallbackTitle: string, slug: string): MenuSe
       continue
     }
 
-    current.lines.push(parseLine(line))
+    current.lines.push(parseLine(line, slug))
   }
 
   if (current.lines.length > 0) {
@@ -218,13 +237,30 @@ function lineBreaks(content: string, slug: string) {
     text = text.replaceAll(` ${label}`, `\n${label}`)
   }
 
+  if (slug === "dessert-menu") {
+    for (const item of dessertItems) {
+      text = text.replaceAll(` ${item}`, `\n${item}`)
+    }
+  }
+
   return text
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean)
 }
 
-function parseLine(line: string): MenuLine {
+function parseLine(line: string, slug: string): MenuLine {
+  if (slug === "dessert-menu") {
+    const dessertItem = dessertItems.find((item) => line === item || line.startsWith(`${item} `))
+
+    if (dessertItem) {
+      return {
+        description: line.slice(dessertItem.length).trim() || undefined,
+        title: dessertItem
+      }
+    }
+  }
+
   const priced = line.match(/^(\$?\s?(?:market price|\d{1,3}(?:\.\d{2})?(?:\s?\/\s?\$?\s?\d{1,3}(?:\.\d{2})?)*))\s+(.+)$/i)
 
   if (!priced) {

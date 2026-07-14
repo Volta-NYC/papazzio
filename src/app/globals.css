@@ -177,6 +177,8 @@ img {
 .special-mini {
   align-items: flex-end;
   background: #1f1b16;
+  border: 1px solid rgb(255 248 232 / 0.42);
+  box-shadow: 8px 8px 0 rgb(31 27 22 / 0.35);
   color: #fff8e8;
   display: flex;
   min-height: 22rem;
@@ -188,7 +190,7 @@ img {
 }
 
 .special-mini::after {
-  background: linear-gradient(to top, rgb(0 0 0 / 0.78), rgb(0 0 0 / 0.08));
+  background: linear-gradient(to top, rgb(0 0 0 / 0.58), rgb(0 0 0 / 0.08) 62%, rgb(0 0 0 / 0));
   content: "";
   inset: 0;
   position: absolute;
@@ -380,6 +382,40 @@ img {
 
 .catering-card:hover img {
   transform: scale(1.08);
+}
+
+.about-image-frame {
+  border: 8px solid #f0c35a;
+  box-shadow: 14px 14px 0 #b53a2d;
+  overflow: hidden;
+}
+
+.okgf-badge {
+  background: #fff;
+  border: 8px solid #0d5127;
+  box-shadow: 12px 12px 0 rgb(31 27 22 / 0.18);
+  max-width: 19rem;
+  overflow: hidden;
+  padding: 1.25rem;
+}
+
+.map-frame {
+  aspect-ratio: 16 / 7;
+  background: #1f1b16;
+  border: 8px solid #f0c35a;
+  box-shadow: 12px 12px 0 #b53a2d;
+  overflow: hidden;
+}
+
+.map-frame iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.text-volta-green {
+  color: #35c36b;
+  font-weight: 900;
 }
 
 .gallery-carousel {
