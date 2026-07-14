@@ -30,7 +30,6 @@ export default function HomePage() {
                 <a className="button button-gold" href={site.orderUrl}>Order Online</a>
                 <Link className="button button-outline-light" href="/menu">View Menu</Link>
                 <a className="button button-ghost-light" href={site.phoneHref}>Call {site.phone}</a>
-                <a className="button button-outline-light" href={site.googleReviewsUrl}>Google Reviews</a>
               </div>
             </div>
 

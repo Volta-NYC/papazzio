@@ -186,17 +186,17 @@ export const catering = {
 export const reviews = [
   {
     quote:
-      "We were very pleasantly surprised by the cozy, warm ambience, the very friendly staff and the wonderful food.",
+      "Cozy, warm ambience, very friendly staff, wonderful food, and all three entrees were excellent.",
     author: "Lunch guest"
   },
   {
     quote:
-      "Danny and Cathy were accommodating, easy to get in touch with, and flexible with our requests and last minute changes.",
-    author: "Catering guest"
+      "The service during the party was great, the prices were fair, and the restaurant had its own nice vibe.",
+    author: "Private party guest"
   },
   {
     quote:
-      "It is great to visit a restaurant where I do not have to worry about getting sick.",
+      "A great restaurant for celiac guests, with wonderful service and a dinner worth coming back for.",
     author: "Gluten-free guest"
   }
 ]
