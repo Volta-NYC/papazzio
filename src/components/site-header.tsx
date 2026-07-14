@@ -8,7 +8,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-4 py-3 sm:px-6 lg:px-8">
         <Link className="group flex items-center" href="/" aria-label="Papazzio home">
           <span className="flex items-center gap-3 leading-none">
-            <img alt="Papazzio" className="h-10 w-28 rounded-sm bg-cream object-contain p-1 sm:h-12 sm:w-36" src={images.logo} />
+            <img alt="Papazzio" className="h-10 w-28 object-contain brightness-0 invert sm:h-12 sm:w-36" src={images.logo} />
             <span className="block text-[0.62rem] font-bold uppercase tracking-[0.28em] text-cream/58">Bayside · NY</span>
           </span>
         </Link>

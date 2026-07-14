@@ -37,8 +37,8 @@ export const hours = [
 ]
 
 export const images = {
-  logo: "/papazzio-logo.jpg",
-  okgf: "/okgf-logo.jpg",
+  logo: "/papazzio-logo-transparent.png",
+  okgf: "/okgf-logo-transparent.png",
   hero: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/126575f6-af45-4b24-95c4-b42e3d5b4dc5/image66.jpg",
   diningRoom: "/main-dining-room.jpg",
   oysters: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/1839daac-265b-43d2-993c-4745fb20259a/image84.jpeg",
