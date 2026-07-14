@@ -9,14 +9,14 @@ export default function SpecialsPage() {
       <main className="bg-ink text-cream">
         <section className="px-4 pb-16 pt-36 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionHeading eyebrow="Specials" light title="Happy Hour, Winesdays, La Dolce Notte, steak, and family meals." text="Current Papazzio specials, with the same details and restrictions shown on the restaurant website." />
+            <SectionHeading eyebrow="Specials" light title="Eight featured ways to dine with Papazzio." text="Featured Papazzio specials and event pages, with current published menu details carried over where available from the restaurant website." />
           </div>
         </section>
 
         <section className="px-4 pb-24 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8">
             {specials.map((special, index) => (
-              <article className={`special-panel scroll-mt-28 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`} id={special.title.toLowerCase().replaceAll(" ", "-")} key={special.title}>
+              <article className={`special-panel reveal-on-scroll scroll-mt-28 ${index % 2 === 1 ? "lg:grid-flow-dense reveal-left" : "reveal-right"}`} id={special.title.toLowerCase().replaceAll(" ", "-")} key={special.title}>
                 <div className={`relative min-h-[24rem] overflow-hidden ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                   <Photo alt={special.title} className="absolute inset-0" src={special.image} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/64 via-black/16 to-transparent" />

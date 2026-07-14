@@ -382,6 +382,69 @@ img {
   transform: scale(1.08);
 }
 
+.gallery-carousel {
+  display: grid;
+  gap: 1rem;
+}
+
+.gallery-carousel-main {
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgb(255 248 232 / 0.16);
+  box-shadow: 14px 14px 0 rgb(181 58 45 / 0.78);
+  overflow: hidden;
+}
+
+.gallery-carousel-controls {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery-carousel-controls > button {
+  align-items: center;
+  background: #fff8e8;
+  border: 0;
+  border-radius: 999px;
+  color: #1f1b16;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 2rem;
+  font-weight: 900;
+  height: 3rem;
+  justify-content: center;
+  line-height: 1;
+  transition: background-color 180ms ease, transform 180ms ease;
+  width: 3rem;
+}
+
+.gallery-carousel-controls > button:hover {
+  background: #f0c35a;
+  transform: translateY(-1px);
+}
+
+.gallery-carousel-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: center;
+}
+
+.gallery-carousel-dots button {
+  background: rgb(255 248 232 / 0.38);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  height: 0.65rem;
+  padding: 0;
+  width: 0.65rem;
+}
+
+.gallery-carousel-dots button.is-active {
+  background: #f0c35a;
+  width: 2.4rem;
+}
+
 .reveal-on-scroll {
   --reveal-scale: 0.985;
   --reveal-x: 0px;

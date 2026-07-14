@@ -7,7 +7,7 @@ const eventTypes = ["Showers", "Birthdays", "Graduations", "Christenings", "Comm
 const cateringCards = [
   {
     eyebrow: "On-site Events",
-    href: "/gallery-2",
+    href: "/catering-packages",
     image: images.cateringParty,
     title: catering.onSiteLabel
   },

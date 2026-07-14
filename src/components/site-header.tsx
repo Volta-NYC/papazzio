@@ -1,14 +1,14 @@
 import Link from "next/link"
 
-import { navItems, site } from "@/lib/content"
+import { images, navItems, site } from "@/lib/content"
 
 export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-cream/10 bg-ink/88 text-cream backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-4 py-3 sm:px-6 lg:px-8">
         <Link className="group flex items-center" href="/" aria-label="Papazzio home">
-          <span className="leading-none">
-            <span className="block font-heading text-2xl font-bold tracking-wide">{site.name}</span>
+          <span className="flex items-center gap-3 leading-none">
+            <img alt="Papazzio" className="h-10 w-28 rounded-sm bg-cream object-contain p-1 sm:h-12 sm:w-36" src={images.logo} />
             <span className="block text-[0.62rem] font-bold uppercase tracking-[0.28em] text-cream/58">Bayside · NY</span>
           </span>
         </Link>

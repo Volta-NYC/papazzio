@@ -1,9 +1,10 @@
 import Link from "next/link"
 
+import { ImageCarousel } from "@/components/image-carousel"
 import { PageShell } from "@/components/page-shell"
 import { Photo } from "@/components/photo"
 import { SectionHeading } from "@/components/section-heading"
-import { hours, images, menuPreview, reviews, site, specials, storyParagraphs } from "@/lib/content"
+import { galleryImages, hours, images, menuPreview, reviews, site, specials, storyParagraphs } from "@/lib/content"
 
 const ticker = ["Authentic Italian cuisine", "Craft cocktails", "Wine and beer", "Gluten-Free dishes", "Bayside, Queens"]
 
@@ -29,6 +30,7 @@ export default function HomePage() {
                 <a className="button button-gold" href={site.orderUrl}>Order Online</a>
                 <Link className="button button-outline-light" href="/menu">View Menu</Link>
                 <a className="button button-ghost-light" href={site.phoneHref}>Call {site.phone}</a>
+                <a className="button button-outline-light" href={site.googleReviewsUrl}>Google Reviews</a>
               </div>
             </div>
 
@@ -63,6 +65,18 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="bg-cream px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.35fr_1fr] lg:items-center">
+            <div className="reveal-on-scroll reveal-left mx-auto max-w-56 overflow-hidden rounded-full border border-ink/10 bg-white p-4 shadow-xl shadow-ink/10 lg:mx-0">
+              <img alt="OKGF Certified Gluten-Free Celiac Safe" className="h-full w-full object-contain" src={images.okgf} />
+            </div>
+            <div className="reveal-on-scroll reveal-right">
+              <SectionHeading eyebrow="Certified Gluten-Free" title="Gluten-Free & Celiac Safe dining is central to Papazzio." text="Papazzio offers a large selection of gluten-free options, marks items available gluten-free with GF, and asks gluten-free guests to tell their server so the kitchen can take care with each order." />
+              <Link className="button button-dark mt-8" href="/menu">Explore Gluten-Free Options</Link>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-cream px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.85fr_1fr] lg:items-center">
             <div className="reveal-on-scroll reveal-left">
@@ -74,7 +88,7 @@ export default function HomePage() {
                 <Photo alt="Papazzio restaurant interior" className="aspect-[5/4]" src={images.diningRoom} />
               </div>
               <div className="absolute -bottom-8 right-8 max-w-sm bg-ink p-6 text-cream">
-                <p className="font-heading text-3xl font-black leading-tight">Luis Alfaro has led the culinary team for over two decades.</p>
+                <p className="font-heading text-3xl font-black leading-tight">Warm brick, white tablecloths, and the neighborhood dining room atmosphere Papazzio is known for.</p>
               </div>
             </div>
           </div>
@@ -126,6 +140,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1fr]">
             <div className="reveal-on-scroll reveal-left">
               <SectionHeading eyebrow="Kind Words" title="Cozy, warm ambience and friendly service." text="Papazzio shares guest notes from diners, catering customers, and gluten-free guests." />
+              <a className="button button-dark mt-8" href={site.googleReviewsUrl}>Read Google Reviews</a>
             </div>
             <div className="grid gap-5">
               {reviews.map((review, index) => (
@@ -138,12 +153,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid bg-black md:grid-cols-4">
-          {[images.pasta, images.oysters, images.wineRoom, images.cateringParty].map((src, index) => (
-            <div className={`reveal-on-scroll reveal-soft ${index % 2 === 0 ? "" : "reveal-delay-1"} aspect-[4/5] overflow-hidden`} key={src}>
-              <Photo alt={`Papazzio gallery image ${index + 1}`} className="transition duration-700 hover:scale-105" src={src} />
+        <section className="bg-black px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="reveal-on-scroll reveal-soft mb-10 text-cream">
+              <SectionHeading eyebrow="Gallery" light title="A closer look at Papazzio." text="Restaurant, food, wine, and event photos from Papazzio's current website and supplied assets." />
             </div>
-          ))}
+            <ImageCarousel images={galleryImages} />
+          </div>
         </section>
 
         <section className="bg-cream px-4 py-24 sm:px-6 lg:px-8">
