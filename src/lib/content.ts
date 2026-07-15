@@ -187,16 +187,16 @@ export const reviews = [
   {
     quote:
       "The cozy, warm ambience, the very friendly staff and the wonderful food.",
-    author: "Lunch guest"
+    author: "German"
   },
   {
     quote:
       "The service during the party was great and the prices were very fair.",
-    author: "Private party guest"
+    author: "Stephanie"
   },
   {
     quote:
       "Thank you for the wonderful service and dinner.",
-    author: "Gluten-free guest"
+    author: "John"
   }
 ]
