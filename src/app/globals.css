@@ -130,8 +130,14 @@ img {
   color: rgb(240 195 90 / 0.9);
 }
 
+.site-header {
+  background: rgb(31 27 22 / 0.98);
+  border-bottom: 1px solid rgb(255 248 232 / 0.16);
+  box-shadow: 0 14px 34px rgb(0 0 0 / 0.28);
+}
+
 .nav-link {
-  color: rgb(255 248 232 / 0.72);
+  color: rgb(255 248 232 / 0.86);
   display: inline-flex;
   overflow: hidden;
   padding: 0.65rem 0;
