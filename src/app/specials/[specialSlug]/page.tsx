@@ -52,6 +52,13 @@ export default async function SpecialDetailPage({ params }: SpecialRouteProps) {
               {page.ctaHref && page.ctaLabel ? (
                 <Link className="button button-gold" href={page.ctaHref}>{page.ctaLabel}</Link>
               ) : null}
+              {page.actions?.map((action) => (
+                action.href.startsWith("/") ? (
+                  <Link className="button button-outline-light" href={action.href} key={action.label}>{action.label}</Link>
+                ) : (
+                  <a className="button button-outline-light" href={action.href} key={action.label}>{action.label}</a>
+                )
+              ))}
               <a className="button button-ghost-light" href={site.phoneHref}>Call {site.phone}</a>
             </div>
           </div>
@@ -71,7 +78,7 @@ export default async function SpecialDetailPage({ params }: SpecialRouteProps) {
 
             <div className="grid gap-6">
               {page.sections.map((section, index) => (
-                <section className={`reveal-on-scroll ${index % 2 === 0 ? "reveal-right" : "reveal-left"} menu-section`} key={section.title}>
+                <section className={`reveal-on-scroll ${index % 2 === 0 ? "reveal-right" : "reveal-left"} menu-section`} id={slugify(section.title)} key={section.title}>
                   <h2>{section.title}</h2>
                   <div className="mt-6 grid gap-3 sm:grid-cols-2">
                     {section.items.map((item) => (
@@ -86,4 +93,8 @@ export default async function SpecialDetailPage({ params }: SpecialRouteProps) {
       </main>
     </PageShell>
   )
+}
+
+function slugify(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
 }

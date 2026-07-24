@@ -146,10 +146,10 @@ export const specials = [
   },
   {
     title: "Live Music Schedule",
-    subtitle: "Events",
-    details: ["Featured specials page requested for Papazzio.", "Call for the current live music schedule."],
+    subtitle: "Every Thursday • 6:30 PM-9:30 PM",
+    details: ["Live Music Every Thursday", "Ask about La Dolce Notte - Dinner for Two", "Meet talented local musicians"],
     href: "/specials/live-music",
-    cta: "View Schedule",
+    cta: "View Live Music",
     image: images.diningRoom
   }
 ]

@@ -1,6 +1,10 @@
 import { images } from "@/lib/content"
 
 export type SpecialPage = {
+  actions?: {
+    href: string
+    label: string
+  }[]
   ctaHref?: string
   ctaLabel?: string
   details: string[]
@@ -195,16 +199,55 @@ export const specialPages = [
   },
   {
     slug: "live-music",
-    eyebrow: "Events",
-    title: "Live Music Schedule",
-    subtitle: "A dedicated page for Papazzio's live music schedule.",
+    eyebrow: "La Dolce Musica",
+    title: "Live Music Thursdays",
+    subtitle: "Some nights deserve a soundtrack.",
     image: images.diningRoom,
-    details: ["Current Papazzio website content does not publish live music dates or performers.", "Call Papazzio for the current live music schedule."],
-    note: "This page is ready for published dates once Papazzio provides them.",
+    details: ["Every Thursday • 6:30 PM-9:30 PM", "Live Music Every Thursday", "Ask about La Dolce Notte - Dinner for Two"],
+    actions: [
+      { href: "#this-month-s-performances", label: "View This Month's Live Music Schedule" },
+      { href: "#planning-ahead", label: "View Next Month's Live Music Schedule" },
+      { href: "#meet-our-talent", label: "Meet The Performers" },
+      { href: "/contact", label: "Make a Reservation" }
+    ],
     sections: [
       {
-        title: "Current Details",
-        items: ["Featured option requested for the Specials section.", "Call 718-229-1962 for the current schedule."]
+        title: "Live Music Every Thursday",
+        items: [
+          "Every Thursday, Papazzio comes alive with talented local musicians, creating the perfect atmosphere for an unforgettable evening.",
+          "Sit back, relax, and enjoy live music while sharing authentic Italian cuisine, handcrafted cocktails, and the warm hospitality that has made Papazzio a Bayside tradition for over 36 years.",
+          "Whether you're celebrating something special or simply escaping the routine, Thursday nights are made for good food, great music, and even better company."
+        ]
+      },
+      {
+        title: "Pair It With Dinner",
+        items: [
+          "Simple. Relaxing. Italian.",
+          "Looking for the perfect Thursday night? Pair the music with La Dolce Notte - Dinner for Two, specially created to complement the evening's live entertainment.",
+          "Ask about La Dolce Notte - Dinner for Two."
+        ]
+      },
+      {
+        title: "This Month's Performances",
+        items: [
+          "Our musicians change throughout the month, so there is always something new to enjoy.",
+          "Use this section for the current month's performance calendar."
+        ]
+      },
+      {
+        title: "Planning Ahead",
+        items: [
+          "Already thinking about your next visit?",
+          "Use this section for next month's live music schedule.",
+          "Reserve your favorite performer before tables fill up."
+        ]
+      },
+      {
+        title: "Meet Our Talent",
+        items: [
+          "The music is just as important as the meal.",
+          "Get to know the talented artists who make Thursday nights at Papazzio so memorable."
+        ]
       }
     ]
   }
