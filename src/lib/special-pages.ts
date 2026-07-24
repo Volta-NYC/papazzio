@@ -19,31 +19,46 @@ export type SpecialPage = {
 export const specialPages = [
   {
     slug: "martini-monday",
-    eyebrow: "Monday Feature",
+    eyebrow: "Un brindisi al lunedi",
     title: "Martini Monday",
-    subtitle: "A dedicated feature page for Papazzio's Monday martini promotion.",
-    image: images.happyHour,
-    details: ["Current Papazzio website content does not publish martini pricing or menu details.", "Call Papazzio for the current Martini Monday offer."],
-    note: "This page is intentionally limited to confirmed information from Papazzio's current website and supplied request.",
+    subtitle: "Who says Mondays have to be ordinary?",
+    image: images.martiniMonday,
+    details: ["Every Monday • All Day", "One complimentary House Vodka or Gin Martini with any entree", "Simple. Classic. Italian."],
     sections: [
       {
-        title: "Current Details",
-        items: ["Featured option requested for the Specials section.", "Call 718-229-1962 for current availability."]
+        title: "The Offer",
+        items: [
+          "Join the Papazzio family every Monday and let us toast to the start of a beautiful week.",
+          "Order any entree and enjoy a complimentary house vodka or gin martini, our gift to you.",
+          "Come for the martini. Stay for homemade flavors, warm hospitality, and the feeling of dining with family."
+        ]
+      },
+      {
+        title: "Details",
+        items: ["Every Monday • All Day", "One complimentary House Vodka or Gin Martini with any entree.", "Salute to a delicious week ahead!"]
       }
     ]
   },
   {
     slug: "pasta-tuesday",
-    eyebrow: "Tuesday Feature",
+    eyebrow: "A Tavola",
     title: "Pasta Tuesday",
-    subtitle: "A dedicated feature page for Papazzio's Tuesday pasta promotion.",
-    image: images.pasta,
-    details: ["Current Papazzio website content does not publish Pasta Tuesday pricing or menu details.", "Call Papazzio for the current Pasta Tuesday offer."],
-    note: "This page avoids invented dishes or pricing and uses only confirmed source content.",
+    subtitle: "In Italy, pasta is not just dinner. It is a reason to gather.",
+    image: images.pastaTuesday,
+    details: ["Every Tuesday • All Day", "Any Pasta • House Salad • House Glass of Wine", "$32.95"],
+    note: "Fradiavolo pasta is not included. Dine-in only. Cannot be combined with any other offer, promotion, or holiday special.",
     sections: [
       {
-        title: "Current Details",
-        items: ["Featured option requested for the Specials section.", "Papazzio's menu includes gluten-free pasta substitutions; tell your server when ordering gluten-free."]
+        title: "The Offer",
+        items: [
+          "Every Tuesday, slow down, pour a glass of wine, and enjoy one of life's simplest pleasures.",
+          "Choose any pasta from the menu, accompanied by a crisp house salad and a glass of house wine.",
+          "Fresh ingredients. Traditional recipes. Warm hospitality."
+        ]
+      },
+      {
+        title: "Details",
+        items: ["Every Tuesday • All Day", "Any Pasta • House Salad • House Glass of Wine • $32.95", "Just like Sunday dinner at Nonna's, only on a Tuesday."]
       }
     ]
   },

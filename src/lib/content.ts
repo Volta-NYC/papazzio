@@ -48,6 +48,8 @@ export const images = {
   contact: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/b775280c-8aea-4529-83a6-19b2b1512fb1/image37.jpeg",
   cateringHero: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/56514355-96d2-4c1f-9868-8fa9ab04d1ad/OIP.webp",
   cateringParty: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/e923f0a9-ba94-4809-ba9a-659e11d8aeb4/IMG_1817.jpg",
+  martiniMonday: "/martini-monday.png",
+  pastaTuesday: "/pasta-tuesday.png",
   happyHour: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/adf091b5-a98c-4e89-a34d-c2ca4a9593fa/image78.jpeg",
   winesday: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/1757629982088-SIRFUQQET07RSQVL55HY/unsplash-image-CPMZguYURMw.jpg",
   dolceNotte: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/1780874965327-LAE66TT3EWVLM5QMM5VC/unsplash-image-TIKNm-4v9Ew.jpg",
@@ -88,19 +90,19 @@ export const menuPreview = [
 export const specials = [
   {
     title: "Martini Monday",
-    subtitle: "Monday Feature",
-    details: ["Featured specials page requested for Papazzio.", "Call for current martini details."],
+    subtitle: "Every Monday • All Day",
+    details: ["One complimentary House Vodka or Gin Martini with any entree", "Simple. Classic. Italian.", "Salute to a delicious week ahead"],
     href: "/specials/martini-monday",
-    cta: "View Feature",
-    image: images.happyHour
+    cta: "View Martini Monday",
+    image: images.martiniMonday
   },
   {
     title: "Pasta Tuesday",
-    subtitle: "Tuesday Feature",
-    details: ["Featured specials page requested for Papazzio.", "Call for current pasta details."],
+    subtitle: "Every Tuesday • All Day",
+    details: ["Any Pasta • House Salad • House Glass of Wine", "$32.95", "Dine-in only. Fradiavolo pasta is not included"],
     href: "/specials/pasta-tuesday",
-    cta: "View Feature",
-    image: images.pasta
+    cta: "View Pasta Tuesday",
+    image: images.pastaTuesday
   },
   {
     title: "WINEsday",
