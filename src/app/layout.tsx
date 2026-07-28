@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Cormorant_Garamond, DM_Sans } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 
 import { site } from "@/lib/content"
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html className="notranslate" lang="en" translate="no">
       <body className={`${headingFont.variable} ${bodyFont.variable} bg-paper font-body text-ink antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
