@@ -595,6 +595,12 @@ img {
     max-width: 22rem;
   }
 
+  .hero-actions .button {
+    font-size: 0.68rem;
+    min-height: 2.55rem;
+    padding: 0.78rem 1rem;
+  }
+
   .reveal-left,
   .reveal-right {
     --reveal-x: 0px;

@@ -12,21 +12,21 @@ export default function HomePage() {
   return (
     <PageShell>
       <main>
-        <section className="relative min-h-[88svh] overflow-hidden bg-ink pt-28 text-cream sm:min-h-screen">
+        <section className="relative min-h-[96svh] overflow-hidden bg-ink pt-28 text-cream sm:min-h-screen">
           <div className="absolute inset-0 opacity-42">
             <Photo alt="Papazzio dining table" className="hero-photo" src={images.hero} />
           </div>
           <div className="hero-shade absolute inset-0" />
-          <div className="relative mx-auto grid min-h-[calc(88svh-7rem)] max-w-7xl items-center gap-10 px-4 py-12 sm:min-h-[calc(100vh-7rem)] sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.8fr] lg:px-8">
+          <div className="relative mx-auto grid min-h-[calc(96svh-7rem)] max-w-7xl items-center gap-10 px-4 py-10 sm:min-h-[calc(100vh-7rem)] sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.8fr] lg:px-8">
             <div className="hero-copy">
               <p className="eyebrow text-gold">Bayside, Queens · Est. 1990</p>
-              <h1 className="mt-5 max-w-5xl font-heading text-5xl font-black leading-[0.9] sm:text-8xl lg:text-9xl">
+              <h1 className="mt-5 max-w-5xl font-heading text-[3.2rem] font-black leading-[0.9] sm:text-8xl lg:text-9xl">
                 Join Us For Family Dinner
               </h1>
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-cream/76">
+              <p className="mt-5 max-w-2xl text-base leading-7 text-cream/76 sm:mt-7 sm:text-lg sm:leading-8">
                 At Papazzio's we serve authentic Italian cuisine, craft cocktails, wine and beer, as well as a fresh menu of Gluten-Free dishes in the comfort of your neighborhood.
               </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="hero-actions mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
                 <a className="button button-gold" href={site.orderUrl}>Order Online</a>
                 <Link className="button button-outline-light" href="/menu">View Menu</Link>
                 <a className="button button-ghost-light" href={site.phoneHref}>Call {site.phone}</a>
