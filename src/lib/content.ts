@@ -48,13 +48,15 @@ export const images = {
   contact: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/b775280c-8aea-4529-83a6-19b2b1512fb1/image37.jpeg",
   cateringHero: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/56514355-96d2-4c1f-9868-8fa9ab04d1ad/OIP.webp",
   cateringParty: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/e923f0a9-ba94-4809-ba9a-659e11d8aeb4/IMG_1817.jpg",
-  martiniMonday: "/martini-monday.png",
-  pastaTuesday: "/pasta-tuesday.png",
+  martiniMonday: "/martini-real.jpg",
+  pastaTuesday: "/pasta-real.jpg",
   happyHour: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/adf091b5-a98c-4e89-a34d-c2ca4a9593fa/image78.jpeg",
   winesday: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/1757629982088-SIRFUQQET07RSQVL55HY/unsplash-image-CPMZguYURMw.jpg",
   dolceNotte: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/1780874965327-LAE66TT3EWVLM5QMM5VC/unsplash-image-TIKNm-4v9Ew.jpg",
   steak: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/57a43176-1bfd-4eef-959f-c65a5551338a/Surf-and-Turf-For-Two-Featured-Image.jpg",
-  takeout: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/eca936bf-4fc8-4baa-9391-eae2adc6070e/DC0F58F3-AF50-46B0-9825-27B130A304CD.png",
+  takeout: "/takeout-specials.jpg",
+  liveMusic: "/live-music-real.jpg",
+  galleryShrimp: "/gallery-shrimp.jpg",
   familyMeal: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/28e49e76-94f1-4e92-bdaa-50038660b8bf/unsplash-image-aFzg83dvnAI.jpg",
   gallery1: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/0ce94199-8b17-4eea-ad0b-503665350adc/image86.jpeg",
   gallery2: "https://images.squarespace-cdn.com/content/v1/68268868f409bb333868810d/e69fc5d6-e753-46c6-b688-37644b8823fd/image97.jpeg",
@@ -123,7 +125,7 @@ export const specials = [
   {
     title: "Sunday Steak Night",
     subtitle: "$79",
-    details: ["12 oz. Ribeye & Shrimp Scampi", "Appetizer, side, and dessert choices", "If sharing, a $10 charge applies"],
+    details: ["16 oz. Ribeye & Shrimp Scampi", "Appetizer, side, and dessert choices", "Sunday steak special"],
     href: "/specials/sunday-steak-night",
     cta: "View Steak Night",
     image: images.steak
@@ -150,12 +152,16 @@ export const specials = [
     details: ["Live Music Every Thursday", "Ask about La Dolce Notte - Dinner for Two", "Meet talented local musicians"],
     href: "/specials/live-music",
     cta: "View Live Music",
-    image: images.diningRoom
+    image: images.liveMusic
   }
 ]
 
 export const galleryImages = [
   { alt: "Papazzio main dining room", src: images.diningRoom },
+  { alt: "Papazzio guests enjoying martinis", src: images.martiniMonday },
+  { alt: "Papazzio spaghetti and meatballs", src: images.pastaTuesday },
+  { alt: "Papazzio champagne dinner table", src: images.liveMusic },
+  { alt: "Papazzio shrimp entree", src: images.galleryShrimp },
   { alt: "Papazzio pasta dish", src: images.gallery1 },
   { alt: "Papazzio plated entree", src: images.gallery2 },
   { alt: "Papazzio oysters", src: images.gallery3 },
@@ -171,6 +177,19 @@ export const recentEventImages = [
   { alt: "Papazzio pasta served for a private party", src: images.pasta },
   { alt: "Papazzio wine room private event", src: images.wineRoom },
   { alt: "Papazzio dining room celebration", src: images.diningRoom }
+]
+
+export const liveMusicPerformers = [
+  {
+    bio: "A local Papazzio feature performer highlighted for Thursday live music with Ailatan/Natalia.",
+    dates: ["Current monthly dates: call Papazzio to confirm"],
+    name: "Leo"
+  },
+  {
+    bio: "A local artist featured alongside Leo for Papazzio's Thursday live music evenings.",
+    dates: ["Current monthly dates: call Papazzio to confirm"],
+    name: "Ailatan / Natalia"
+  }
 ]
 
 export const storyParagraphs = [

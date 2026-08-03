@@ -11,6 +11,7 @@ export type SpecialPage = {
   eyebrow: string
   image: string
   note?: string
+  sectionLayout?: "grid" | "single"
   sections: {
     items: string[]
     title: string
@@ -74,7 +75,7 @@ export const specialPages = [
     image: images.winesday,
     details: ["Wednesday", "50% off all Wine Bottles", "OR BYOW - No Cork Fee - Bring your Own Wine", "Valid with one entree - no other promos"],
     ctaHref: "/wine-menu",
-    ctaLabel: "View Wine Menu",
+    ctaLabel: "View Wine List",
     sections: [
       {
         title: "Offer",
@@ -125,7 +126,7 @@ export const specialPages = [
     title: "Sunday Steak Night",
     subtitle: "Sunday Steak Special for $79.",
     image: images.steak,
-    details: ["$79", "12 oz. Ribeye & Shrimp Scampi", "Select one side from menu", "Personal Promotion", "If sharing, a $10 charge applies"],
+    details: ["$79", "16 oz. Ribeye & Shrimp Scampi", "Select one side from menu", "Personal Promotion"],
     sections: [
       {
         title: "Choose an Appetizer",
@@ -133,7 +134,7 @@ export const specialPages = [
       },
       {
         title: "Main Dish",
-        items: ["12 oz. Ribeye", "Shrimp Scampi", "Select one side from menu"]
+        items: ["16 oz. Ribeye", "Shrimp Scampi", "Select one side from menu"]
       },
       {
         title: "Choose a Dessert",
@@ -175,24 +176,86 @@ export const specialPages = [
     subtitle: "La Cena da Asporto and Weekdays Family Meal.",
     image: images.takeout,
     details: ["La Cena da Asporto is takeout only.", "Weekdays Family Meal is $75 for 4-5 portions.", "Family Meal is Monday, Tuesday & Wednesday for take out or delivery."],
+    sectionLayout: "single",
     sections: [
       {
-        title: "La Cena da Asporto",
+        title: "Takeout Description",
         items: [
-          "Choose one appetizer to share: House Salad, Caesar Salad, Fried Mozzarella, or Meatballs in Vodka Sauce",
-          "Choose two entrees including Chicken Parmigiana, Chicken Francese, Penne Vodka with Chicken, Rigatoni Bolognese, Linguine & Meatballs, Eggplant Parmigiana, Linguine Garlic & Oil, or Fettuccine Alfredo with Shrimp (+$6 upgrade)",
-          "Homemade dessert options: Tiramisu, Cannoli, or Cheesecake +$5 each",
+          "La Cena da Asporto is a takeout-only dinner for two.",
+          "Choose one appetizer to share and two entrees.",
+          "Fettuccine Alfredo with Shrimp is available as a +$6 upgrade."
+        ]
+      },
+      {
+        title: "Takeout Salads & Starters",
+        items: [
+          "House Salad",
+          "Caesar Salad",
+          "Fried Mozzarella",
+          "Meatballs in Vodka Sauce"
+        ]
+      },
+      {
+        title: "Takeout Mains",
+        items: [
+          "Chicken Parmigiana",
+          "Chicken Francese",
+          "Penne Vodka with Chicken",
+          "Rigatoni Bolognese",
+          "Linguine & Meatballs",
+          "Eggplant Parmigiana",
+          "Linguine Garlic & Oil",
+          "Fettuccine Alfredo with Shrimp +$6"
+        ]
+      },
+      {
+        title: "Takeout Desserts & Wine",
+        items: [
+          "Tiramisu +$5",
+          "Cannoli +$5",
+          "Cheesecake +$5",
           "375ml sealed bottle options: Prosecco, Rose, Sauvignon Blanc, or Cabernet Sauvignon +$20"
         ]
       },
       {
-        title: "Weekdays Family Meal",
+        title: "Weekly Family Meal Description",
         items: [
-          "Choose an appetizer: House or Caesar Salad, Sliced Tomato & Mozzarella, Sauteed Vegetables, or Mashed Potatoes",
-          "Choose a pasta: Penne alla Vodka, Penne Marinara, Linguine with Garlic & Oil, Rigatoni Fileto Pomodoro, or Fettucine Alfredo",
-          "Choose an entree: Chicken Marsala, Chicken Francese, Chicken Parmesan, Chicken Picatta, or Sausage & Peppers",
-          "Swap Chicken for Veal or Salmon for +$15",
+          "Weekdays Family Meal is $75 for 4-5 portions.",
+          "Available Monday, Tuesday, and Wednesday for take out or delivery.",
           "Holidays excluded. No combining offer."
+        ]
+      },
+      {
+        title: "Weekly Family Meal Salads & Sides",
+        items: [
+          "House Salad",
+          "Caesar Salad",
+          "Sliced Tomato & Mozzarella",
+          "Sauteed Vegetables",
+          "Mashed Potatoes"
+        ]
+      },
+      {
+        title: "Weekly Family Meal Mains",
+        items: [
+          "Penne alla Vodka",
+          "Penne Marinara",
+          "Linguine with Garlic & Oil",
+          "Rigatoni Fileto Pomodoro",
+          "Fettucine Alfredo",
+          "Chicken Marsala",
+          "Chicken Francese",
+          "Chicken Parmesan",
+          "Chicken Picatta",
+          "Sausage & Peppers",
+          "Swap Chicken for Veal or Salmon for +$15"
+        ]
+      },
+      {
+        title: "Weekly Family Meal Desserts",
+        items: [
+          "Desserts are not listed with the current Weekdays Family Meal offer.",
+          "Ask Papazzio about adding house desserts when placing a takeout or delivery order."
         ]
       }
     ]
@@ -202,10 +265,10 @@ export const specialPages = [
     eyebrow: "La Dolce Musica",
     title: "Live Music Thursdays",
     subtitle: "Some nights deserve a soundtrack.",
-    image: images.diningRoom,
+    image: images.liveMusic,
     details: ["Every Thursday • 6:30 PM-9:30 PM", "Live Music Every Thursday", "Ask about La Dolce Notte - Dinner for Two"],
     actions: [
-      { href: "#this-month-s-performances", label: "View This Month's Live Music Schedule" },
+      { href: "/specials/live-music/performers", label: "View This Month's Performers" },
       { href: "#planning-ahead", label: "View Next Month's Live Music Schedule" },
       { href: "#meet-our-talent", label: "Meet The Performers" },
       { href: "/contact", label: "Make a Reservation" }

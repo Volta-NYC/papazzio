@@ -80,7 +80,7 @@ export default async function SpecialDetailPage({ params }: SpecialRouteProps) {
               {page.sections.map((section, index) => (
                 <section className={`reveal-on-scroll ${index % 2 === 0 ? "reveal-right" : "reveal-left"} menu-section`} id={slugify(section.title)} key={section.title}>
                   <h2>{section.title}</h2>
-                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  <div className={`mt-6 grid gap-3 ${page.sectionLayout === "single" ? "" : "sm:grid-cols-2"}`}>
                     {section.items.map((item) => (
                       <p className="border-t border-ink/12 pt-3 text-base font-bold leading-7 text-ink/72" key={item}>{item}</p>
                     ))}
