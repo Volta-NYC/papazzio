@@ -164,6 +164,15 @@ export const galleryImages = [
   { alt: "Papazzio wine room", src: images.gallery6 }
 ]
 
+export const recentEventImages = [
+  { alt: "Papazzio private dining event", src: images.cateringParty },
+  { alt: "Papazzio catered table setting", src: images.hero },
+  { alt: "Papazzio plated entree for an event", src: images.plate },
+  { alt: "Papazzio pasta served for a private party", src: images.pasta },
+  { alt: "Papazzio wine room private event", src: images.wineRoom },
+  { alt: "Papazzio dining room celebration", src: images.diningRoom }
+]
+
 export const storyParagraphs = [
   "Dominick opened Papazzio in 1990, naming the restaurant in honor of his beloved uncle, Angelo.",
   "The name Papazzio is a playful blend of the Italian words for father and uncle.",

@@ -21,16 +21,18 @@ const packages = [
     menu: ["Salad: choose one", "Pasta: choose one", "Entree: choose three", "Dessert: Occasion Cake of your choice"]
   },
   {
-    title: "Premiere Package - Evening",
-    price: "$45.95 per person",
-    href: "https://www.papazzio.com/premiere-evening",
+    title: "Buffet Package",
+    price: "$41.95 per person",
+    href: "https://www.papazzio.com/buffet-package",
     details: [
-      "Available Monday-Friday after 3:00 pm, based on availability.",
-      "Complete four-course Italian meal; gluten-free +$3.",
-      "Includes fresh bread & butter, coffee, tea, and soda.",
-      "Wine, cocktails, and appetizers can be added."
+      "Available Saturdays and Sundays from 12-4 pm or 1-5 pm.",
+      "30-adult minimum for exclusive use.",
+      "Four-course Italian meal; gluten-free +$3.",
+      "Events past 5:00 pm add $6 per person, based on availability.",
+      "Children under 10 dine at half price.",
+      "Includes coffee, tea, and soda."
     ],
-    menu: ["Salad: choose one", "Pasta: choose one", "Entree: choose three", "Dessert: Occasion Cake of your choice"]
+    menu: ["Choose six buffet items", "Dessert: Occasion Cake of your choice", "Additional wine, cocktails, or appetizers available"]
   },
   {
     title: "Lunch Package",
@@ -45,18 +47,16 @@ const packages = [
     menu: ["Salad: choose two", "Entree: choose four", "Dessert: Cheesecake or Tiramisu"]
   },
   {
-    title: "Buffet Package",
-    price: "$41.95 per person",
-    href: "https://www.papazzio.com/buffet-package",
+    title: "Premiere Package - Evening",
+    price: "$45.95 per person",
+    href: "https://www.papazzio.com/premiere-evening",
     details: [
-      "Available Saturdays and Sundays from 12-4 pm or 1-5 pm.",
-      "30-adult minimum for exclusive use.",
-      "Four-course Italian meal; gluten-free +$3.",
-      "Events past 5:00 pm add $6 per person, based on availability.",
-      "Children under 10 dine at half price.",
-      "Includes coffee, tea, and soda."
+      "Available Monday-Friday after 3:00 pm, based on availability.",
+      "Complete four-course Italian meal; gluten-free +$3.",
+      "Includes fresh bread & butter, coffee, tea, and soda.",
+      "Wine, cocktails, and appetizers can be added."
     ],
-    menu: ["Choose six buffet items", "Dessert: Occasion Cake of your choice", "Additional wine, cocktails, or appetizers available"]
+    menu: ["Salad: choose one", "Pasta: choose one", "Entree: choose three", "Dessert: Occasion Cake of your choice"]
   }
 ]
 

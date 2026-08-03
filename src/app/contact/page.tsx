@@ -31,6 +31,9 @@ export default function ContactPage() {
             <div>
               <SectionHeading title="Book our Wine Room!" text="Enjoy a relaxed dinner in our private wine cellar. For Reservations, call 718-229-1962." />
               <p className="mt-6 text-lg font-black uppercase tracking-[0.18em] text-tomato">Minimum 6 Guests</p>
+              <div className="mt-8 overflow-hidden border-8 border-gold shadow-[12px_12px_0_#b53a2d]">
+                <Photo alt="Papazzio private Wine Room" className="aspect-[4/3]" src={images.wineRoom} />
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <article className="bg-cream p-7 shadow-[8px_8px_0_#1f1b16]">

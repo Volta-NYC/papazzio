@@ -1,7 +1,8 @@
 import { PageShell } from "@/components/page-shell"
+import { ImageCarousel } from "@/components/image-carousel"
 import { Photo } from "@/components/photo"
 import { SectionHeading } from "@/components/section-heading"
-import { catering, images, site } from "@/lib/content"
+import { catering, images, recentEventImages, site } from "@/lib/content"
 
 const eventTypes = ["Showers", "Birthdays", "Graduations", "Christenings", "Communions"]
 const cateringCards = [
@@ -72,6 +73,21 @@ export default function CateringPage() {
                 <Feature className="reveal-left reveal-delay-1" title="Planning" text={catering.managerText} />
                 <Feature className="reveal-right reveal-delay-2" title="At home" text="Tray Menu options are available for take-home catering." />
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="reveal-on-scroll reveal-soft bg-ink px-4 py-24 text-cream sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1fr] lg:items-center">
+            <div>
+              <SectionHeading eyebrow="Recent Events" light title="Private parties, family tables, and Papazzio hospitality." text="A closer look at recent event moments, dining-room celebrations, and dishes that work beautifully for private parties." />
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a className="button button-gold" href={site.phoneHref}>Plan by Phone</a>
+                <a className="button button-outline-light" href="/catering-packages">View Packages</a>
+              </div>
+            </div>
+            <div className="reveal-on-scroll reveal-right">
+              <ImageCarousel images={recentEventImages} />
             </div>
           </div>
         </section>
