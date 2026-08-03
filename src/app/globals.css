@@ -136,6 +136,18 @@ img {
   box-shadow: 0 14px 34px rgb(0 0 0 / 0.28);
 }
 
+.hero-photo {
+  object-position: 58% center;
+}
+
+.hero-shade {
+  background: linear-gradient(90deg, rgb(19 17 14 / 0.96), rgb(19 17 14 / 0.72), rgb(19 17 14 / 0.18));
+}
+
+.hero-copy {
+  max-width: 36rem;
+}
+
 .nav-link {
   color: rgb(255 248 232 / 0.86);
   display: inline-flex;
@@ -569,6 +581,20 @@ img {
 }
 
 @media (max-width: 640px) {
+  .hero-photo {
+    object-position: 68% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(180deg, rgb(19 17 14 / 0.92), rgb(19 17 14 / 0.68) 46%, rgb(19 17 14 / 0.14)),
+      linear-gradient(90deg, rgb(19 17 14 / 0.7), rgb(19 17 14 / 0.12));
+  }
+
+  .hero-copy {
+    max-width: 22rem;
+  }
+
   .reveal-left,
   .reveal-right {
     --reveal-x: 0px;

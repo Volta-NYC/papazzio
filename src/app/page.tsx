@@ -12,15 +12,15 @@ export default function HomePage() {
   return (
     <PageShell>
       <main>
-        <section className="relative min-h-screen overflow-hidden bg-ink pt-24 text-cream">
+        <section className="relative min-h-[88svh] overflow-hidden bg-ink pt-28 text-cream sm:min-h-screen">
           <div className="absolute inset-0 opacity-42">
-            <Photo alt="Papazzio dining table" src={images.hero} />
+            <Photo alt="Papazzio dining table" className="hero-photo" src={images.hero} />
           </div>
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,17,14,0.96),rgba(19,17,14,0.72),rgba(19,17,14,0.18))]" />
-          <div className="relative mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.8fr] lg:px-8">
-            <div>
+          <div className="hero-shade absolute inset-0" />
+          <div className="relative mx-auto grid min-h-[calc(88svh-7rem)] max-w-7xl items-center gap-10 px-4 py-12 sm:min-h-[calc(100vh-7rem)] sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.8fr] lg:px-8">
+            <div className="hero-copy">
               <p className="eyebrow text-gold">Bayside, Queens · Est. 1990</p>
-              <h1 className="mt-5 max-w-5xl font-heading text-6xl font-black leading-[0.88] sm:text-8xl lg:text-9xl">
+              <h1 className="mt-5 max-w-5xl font-heading text-5xl font-black leading-[0.9] sm:text-8xl lg:text-9xl">
                 Join Us For Family Dinner
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-cream/76">
@@ -139,7 +139,6 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1fr]">
             <div className="reveal-on-scroll reveal-left">
               <SectionHeading eyebrow="Kind Words" title="Cozy, warm ambience and friendly service." text="Papazzio shares guest notes from diners, catering customers, and gluten-free guests." />
-              <a className="button button-dark mt-8" href={site.googleReviewsUrl}>Read Google Reviews</a>
             </div>
             <div className="grid gap-5">
               {reviews.map((review, index) => (
@@ -148,6 +147,9 @@ export default function HomePage() {
                   <cite className="mt-4 block text-sm font-black uppercase tracking-[0.18em] text-tomato">- {review.author}</cite>
                 </blockquote>
               ))}
+              <div className="reveal-on-scroll reveal-soft flex justify-start lg:justify-end">
+                <a className="button button-dark" href={site.googleReviewsUrl}>Read Google Reviews</a>
+              </div>
             </div>
           </div>
         </section>
@@ -187,14 +189,27 @@ export default function HomePage() {
 }
 
 function InfoCard({ className = "", lines, title }: { className?: string; lines: string[]; title: string }) {
+  const isHours = title === "Hours"
+
   return (
     <article className={`reveal-on-scroll border border-ink bg-cream p-6 shadow-[8px_8px_0_#1f1b16] ${className}`}>
       <p className="text-xs font-black uppercase tracking-[0.22em] text-tomato">{title}</p>
-      <div className="mt-4 space-y-1 font-heading text-2xl font-black leading-tight text-ink">
-        {lines.map((line) => (
-          <p key={line}>{line}</p>
-        ))}
-      </div>
+      {isHours ? (
+        <div className="mt-4 grid gap-3">
+          {hours.map((item) => (
+            <div className="border-t border-ink/12 pt-3" key={item.label}>
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-ink/54">{item.label}</p>
+              <p className="font-heading text-3xl font-black leading-none text-ink sm:text-4xl">{item.value}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-4 space-y-1 font-heading text-2xl font-black leading-tight text-ink">
+          {lines.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
+      )}
     </article>
   )
 }

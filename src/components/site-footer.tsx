@@ -1,13 +1,13 @@
 import Link from "next/link"
 
-import { hours, navItems, site } from "@/lib/content"
+import { hours, images, navItems, site } from "@/lib/content"
 
 export function SiteFooter() {
   return (
     <footer className="bg-black px-4 py-14 text-cream sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.3fr_0.7fr_0.7fr]">
         <div>
-          <p className="font-heading text-4xl font-bold">{site.name}</p>
+          <img alt="Papazzio" className="h-16 w-52 object-contain brightness-0 invert" src={images.logo} />
           <p className="mt-4 max-w-xl text-base leading-7 text-cream/68">{site.description}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a className="button button-gold" href={site.orderUrl}>Order Online</a>
