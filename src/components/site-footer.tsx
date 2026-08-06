@@ -53,7 +53,7 @@ export function SiteFooter() {
         <div className="flex gap-5">
           <a className="transition hover:text-cream" href={site.facebookUrl}>Facebook</a>
           <a className="transition hover:text-cream" href={site.instagramUrl}>Instagram</a>
-          <span className="normal-case tracking-normal">Made by <span className="text-volta-green">Volta</span></span>
+          <span className="normal-case tracking-normal">Made by <a href="https://www.novusnyc.org/" target="_blank" rel="noreferrer" className="text-volta-green">Novus</a></span>
         </div>
       </div>
     </footer>
