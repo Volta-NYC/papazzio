@@ -91,12 +91,24 @@ export const specialPages = [
     slug: "thursday-prix-fixe",
     eyebrow: "Thursdays",
     title: "Thursday Prix Fixe / Date Night",
-    subtitle: "La Dolce Notte - Thursday Prix Fixe for $79 per couple.",
+    subtitle: "La Dolce Notte - Thursday Date Night with live music for $79 per couple.",
     image: images.dolceNotte,
-    details: ["Great Food. Great Company. Beautiful Nights.", "Thursdays Only.", "$79 / Couple"],
+    details: ["Thursday Date Night + Live Music", "Thursdays Only.", "$79 / Couple", "Live music every Thursday from 6:30 PM-9:30 PM"],
     ctaHref: "/seasonal-menu",
     ctaLabel: "View Seasonal Menu",
+    actions: [
+      { href: "/specials/live-music/performers", label: "View This Month's Performers" },
+      { href: "/contact", label: "Make a Reservation" }
+    ],
     sections: [
+      {
+        title: "Date Night + Live Music",
+        items: [
+          "La Dolce Notte pairs Papazzio's Thursday prix fixe dinner for two with the atmosphere of live local music.",
+          "Live music runs every Thursday from 6:30 PM-9:30 PM.",
+          "Reserve ahead when planning around a favorite performer."
+        ]
+      },
       {
         title: "Antipasti - Choose One",
         items: ["Insalata Caesar Classica GF", "Pomodoro e Mozzarella GF", "Polpette della Casa GF", "Burrata con Prosciutto GF"]

@@ -241,6 +241,32 @@ img {
   width: 100%;
 }
 
+.secondary-special {
+  align-items: flex-end;
+  background: #1f1b16;
+  border: 1px solid rgb(31 27 22 / 0.12);
+  box-shadow: 8px 8px 0 rgb(31 27 22 / 0.14);
+  display: flex;
+  min-height: 21rem;
+  overflow: hidden;
+  padding: 1.25rem;
+  position: relative;
+}
+
+.secondary-special::after {
+  background: linear-gradient(to top, rgb(0 0 0 / 0.78), rgb(0 0 0 / 0.22) 64%, rgb(0 0 0 / 0.04));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.secondary-special img {
+  height: 100%;
+  max-width: none;
+  opacity: 0.68;
+  width: 100%;
+}
+
 .special-panel {
   display: grid;
   overflow: hidden;
