@@ -14,11 +14,35 @@ const packages = [
       "Available Saturdays and Sundays, 12-4 pm or 1-5 pm.",
       "30-adult minimum for exclusive use.",
       "Four-course Italian meal; gluten-free +$3.",
-      "Events past 4 pm add $6 per person, based on availability.",
+      "Events past 4 pm add $5 per person, based on availability.",
       "Kids under 10 dine at half price.",
-      "Includes coffee, tea, and soda."
+      "Includes coffee, tea, and soda.",
+      "Bar service and appetizers can be added by request."
     ],
-    menu: ["Salad: choose one", "Pasta: choose one", "Entree: choose three", "Dessert: Occasion Cake of your choice"]
+    sections: [
+      { title: "Salad - choose one", items: ["House Salad", "Caesar Salad", "Tri-Color Salad"] },
+      { title: "Pasta - choose one", items: ["Penne Vodka", "Penne Marinara", "Fettuccine Alfredo", "Penne Filetto di Pomodoro"] },
+      {
+        title: "Entree - choose three",
+        items: [
+          "Chicken Parmigiana",
+          "Chicken Scarpiello",
+          "Chicken Bianco",
+          "Chicken Marsala",
+          "Chicken Francaise",
+          "Veal Saltimbocca",
+          "Veal Piccata",
+          "Veal Marsala",
+          "Veal Parmigiana",
+          "Salmon Oreganato",
+          "Lemon Basil Salmon",
+          "Horseradish Pesto Salmon",
+          "Champagne Dill Salmon",
+          "Eggplant Parmigiana"
+        ]
+      },
+      { title: "Dessert", items: ["Occasion Cake of your choice", "See Cake Options Menu"] }
+    ]
   },
   {
     title: "Buffet Package",
@@ -28,11 +52,44 @@ const packages = [
       "Available Saturdays and Sundays from 12-4 pm or 1-5 pm.",
       "30-adult minimum for exclusive use.",
       "Four-course Italian meal; gluten-free +$3.",
-      "Events past 5:00 pm add $6 per person, based on availability.",
+      "Events past 5:00 pm add $5 per person, based on availability.",
       "Children under 10 dine at half price.",
-      "Includes coffee, tea, and soda."
+      "Includes coffee, tea, and soda.",
+      "Wine, cocktails, and appetizers can be added."
     ],
-    menu: ["Choose six buffet items", "Dessert: Occasion Cake of your choice", "Additional wine, cocktails, or appetizers available"]
+    sections: [
+      {
+        title: "Choose Six Items",
+        items: [
+          "House Salad",
+          "Caesar Salad",
+          "Spinach Salad",
+          "Calamari Fritti",
+          "Sliced Tomato & Mozzarella",
+          "Penne alla Vodka",
+          "Penne Marinara",
+          "Fettuccine Alfredo",
+          "Penne Filetto di Pomodoro",
+          "Baked Ziti",
+          "Eggplant Parmigiana",
+          "Sausage & Peppers",
+          "Chicken Parmigiana",
+          "Chicken Scarpiello",
+          "Chicken Bianco",
+          "Chicken Marsala",
+          "Chicken Francese",
+          "Veal Piccata",
+          "Veal Marsala",
+          "Veal Parmigiana",
+          "Salmon Oreganato",
+          "Salmon Lemon Basil",
+          "Salmon with Horseradish Pesto Sauce",
+          "Salmon with Champagne Dill Sauce",
+          "Mixed Vegetables sauteed in garlic and oil"
+        ]
+      },
+      { title: "Dessert", items: ["Occasion Cake of your choice", "See Cake Options Menu"] }
+    ]
   },
   {
     title: "Lunch Package",
@@ -44,28 +101,134 @@ const packages = [
       "Monday or Tuesday lunch service may be arranged by advance reservation.",
       "Monday or Tuesday requires a minimum guarantee of 25 guests."
     ],
-    menu: ["Salad: choose two", "Entree: choose four", "Dessert: Cheesecake or Tiramisu"]
+    sections: [
+      { title: "Salad - choose two", items: ["House Salad", "Caesar Salad", "Tri-Color Salad", "Sliced Tomato & Mozzarella"] },
+      {
+        title: "Entree - choose four",
+        items: [
+          "Penne Vodka with Chicken",
+          "Fettuccine Alfredo & Broccoli",
+          "Penne Filetto di Pomodoro",
+          "Capellini alla Rosa",
+          "Chicken Parmesan",
+          "Chicken Bianco",
+          "Chicken Marsala",
+          "Chicken Francese",
+          "Chicken Piccata",
+          "Veal Saltimbocca",
+          "Veal Piccata",
+          "Veal Marsala",
+          "Veal Parmesan",
+          "Salmon Oreganato",
+          "Lemon Basil Salmon",
+          "Horseradish Pesto Salmon",
+          "Champagne Dill Salmon",
+          "Eggplant Parmesan"
+        ]
+      },
+      { title: "Dessert", items: ["Cheesecake", "Tiramisu"] }
+    ]
   },
   {
     title: "Premiere Package - Evening",
-    price: "$45.95 per person",
+    price: "$49.95 per person",
     href: "https://www.papazzio.com/premiere-evening",
     details: [
-      "Available Monday-Friday after 3:00 pm, based on availability.",
+      "Available Monday-Thursday after 3:00 pm, based on availability.",
       "Complete four-course Italian meal; gluten-free +$3.",
-      "Includes fresh bread & butter, coffee, tea, and soda.",
-      "Wine, cocktails, and appetizers can be added."
+      "Includes coffee, tea, and soda.",
+      "Wine, cocktails, and appetizers can be added from the Additional Options Menu."
     ],
-    menu: ["Salad: choose one", "Pasta: choose one", "Entree: choose three", "Dessert: Occasion Cake of your choice"]
+    sections: [
+      { title: "Salad - choose one", items: ["House Salad", "Caesar Salad", "Tri-Color Salad"] },
+      { title: "Pasta - choose one", items: ["Penne Vodka", "Penne Marinara", "Fettuccine Alfredo", "Penne Filetto di Pomodoro"] },
+      {
+        title: "Entree - choose three",
+        items: [
+          "Chicken Parmigiana",
+          "Chicken Scarpiello",
+          "Chicken Bianco",
+          "Chicken Marsala",
+          "Chicken Francaise",
+          "Veal Saltimbocca",
+          "Veal Piccata",
+          "Veal Marsala",
+          "Veal Parmigiana",
+          "Salmon Oreganato",
+          "Lemon Basil Salmon",
+          "Horseradish Pesto Salmon",
+          "Champagne Dill Salmon",
+          "Eggplant Parmigiana"
+        ]
+      },
+      { title: "Dessert", items: ["Occasion Cake of your choice", "See Cake Options Menu"] }
+    ]
   }
 ]
 
-const supportMenus = [
+const cakeMenu = [
+  { title: "Cake Choices", items: ["Yellow Cake", "Devils Food Cake"] },
   {
-    title: "Cake Menu",
-    href: "https://www.papazzio.com/cake-menu",
-    details: ["Yellow Cake", "Devils Food Cake", "Multiple fillings and toppings", "Premium cakes available for an additional charge"]
+    title: "Fillings",
+    items: [
+      "Strawberry Jam",
+      "Fresh Strawberry",
+      "Peaches",
+      "Bananas",
+      "Fresh Peaches",
+      "Pineapple",
+      "Lemon",
+      "Butter Cream",
+      "Chocolate Butter Cream",
+      "Bavarian Cream",
+      "Chocolate Pudding",
+      "Vanilla Pudding",
+      "Vanilla & Chocolate Pudding",
+      "Chocolate Custard",
+      "Vanilla Custard",
+      "Chocolate Mousse",
+      "Cannoli Filling"
+    ]
   },
+  { title: "Toppings", items: ["Chocolate Fudge Icing", "Cream Cheese Icing", "Whipped Cream", "Chocolate Whipped Cream", "Butter Cream", "Chocolate Butter Cream"] },
+  {
+    title: "Cakes Available for Additional Charge",
+    items: ["Carrot Cake", "Napoleon Cake", "German Chocolate Cake", "Black Forest Cake", "Chocolate Dream Cake", "Mocha Cake"]
+  }
+]
+
+const wineMenu = [
+  { title: "Spumante", items: ["Prosecco, Torresella | Trento", "Champagne, Veuve Clicquot | France", "Lambrusco, Quercioli | Emilia Romagna", "Moscato d'Asti, Villa Rosa | Piedmont"] },
+  {
+    title: "Bianco",
+    items: [
+      "Chardonnay, Rodney Strong | Sonoma",
+      "Greco Bianco, Librandi | Calabria",
+      "Sauvignon Blanc, Kim Crawford | New Zealand",
+      "Sauvignon Blanc, Prodigo | Friuli",
+      "Pinot Grigio, Livio Felluga | Collio",
+      "Pinot Grigio, Torresella | Veneto",
+      "Rose, Whispering Angel | Italy",
+      "Vermentino, Argiolas Costamolino | Sardinia"
+    ]
+  },
+  {
+    title: "Rosso Italiano",
+    items: [
+      "Baby Amarone, Veronese Alanera | Calabria",
+      "Chianti Classico, Monsanto | Barberino",
+      "Nero d'Avola, John Dapetrosino | Sicilia",
+      "Pinot Nero, Cantina Tramin | Trentino",
+      "Primitivo, Masseria Li Veli | Puglia",
+      "Super Tuscan, Barco Reale | Tuscany",
+      "Valpolicella, Tenuta Sant'Antonio | Veneto"
+    ]
+  },
+  { title: "Rosso Americano", items: ["Cabernet Sauvignon, Charles Krug | Napa Valley", "Cabernet Sauvignon, Jordan | Sonoma County", "Cabernet Sauvignon, Freakshow | Lodi", "Merlot, Charles Krug | Napa Valley"] },
+  { title: "Rosso Argentino", items: ["Malbec Org, Domaine Bousquet | Mendoza", "Pinot Noir Org, Domaine Bousquet | Mendoza"] }
+]
+
+const supportMenus = [
   {
     title: "Additional Options",
     href: "https://www.papazzio.com/additionals-menu",
@@ -108,8 +271,15 @@ export default function CateringPackagesPage() {
                     <li className="border-t border-ink/12 pt-2" key={detail}>{detail}</li>
                   ))}
                 </ul>
-                <div className="mt-6 grid gap-2 bg-paper p-4 text-sm font-black text-ink/72">
-                  {item.menu.map((detail) => <p key={detail}>{detail}</p>)}
+                <div className="mt-6 grid gap-4 bg-paper p-4">
+                  {item.sections.map((section) => (
+                    <div key={section.title}>
+                      <h3 className="text-xs font-black uppercase tracking-[0.18em] text-tomato">{section.title}</h3>
+                      <div className="mt-3 grid gap-2 text-sm font-black leading-6 text-ink/72 sm:grid-cols-2">
+                        {section.items.map((detail) => <p key={detail}>{detail}</p>)}
+                      </div>
+                    </div>
+                  ))}
                 </div>
                 <a className="button button-dark mt-6" href={item.href}>View Full Package</a>
               </article>
@@ -119,8 +289,40 @@ export default function CateringPackagesPage() {
 
         <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionHeading eyebrow="More Options" title="Cake, add-ons, and take-home trays." text="Package add-ons, cake choices, and tray menus are connected here so visitors can move directly into the right catering option." />
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
+            <SectionHeading eyebrow="Cake Menu" title="Occasion cake options." text="Included occasion cakes can be customized with classic cake bases, fillings, and toppings. Premium cakes are available for an additional charge." />
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {cakeMenu.map((item) => (
+                <article className="reveal-on-scroll reveal-soft border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5" key={item.title}>
+                  <h3 className="font-heading text-3xl font-black">{item.title}</h3>
+                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/68">
+                    {item.items.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-paper px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <SectionHeading eyebrow="Wine Menu" title="Wine selections for events." text="Use these selections as a planning reference for private dining, bar service, and special event conversations." />
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {wineMenu.map((item) => (
+                <article className="reveal-on-scroll reveal-soft border border-ink/10 bg-cream p-6 shadow-lg shadow-ink/5" key={item.title}>
+                  <h3 className="font-heading text-3xl font-black">{item.title}</h3>
+                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/68">
+                    {item.items.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <SectionHeading eyebrow="More Options" title="Add-ons and take-home trays." text="Package add-ons and tray menus are connected here so visitors can move directly into the right catering option." />
+            <div className="mt-10 grid gap-5 md:grid-cols-2">
               {supportMenus.map((item) => (
                 <a className="reveal-on-scroll reveal-soft border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5 transition hover:-translate-y-1 hover:border-tomato" href={item.href} key={item.title}>
                   <h3 className="font-heading text-3xl font-black">{item.title}</h3>
