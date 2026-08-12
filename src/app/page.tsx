@@ -4,7 +4,7 @@ import { ImageCarousel } from "@/components/image-carousel"
 import { PageShell } from "@/components/page-shell"
 import { Photo } from "@/components/photo"
 import { SectionHeading } from "@/components/section-heading"
-import { galleryImages, hours, images, menuPreview, reviews, site, specials, storyParagraphs } from "@/lib/content"
+import { featuredSpecials, galleryImages, hours, images, menuPreview, reviews, site, storyParagraphs } from "@/lib/content"
 
 const ticker = ["Authentic Italian cuisine", "Craft cocktails", "Wine and beer", "Gluten-Free dishes", "Bayside, Queens"]
 
@@ -118,18 +118,20 @@ export default function HomePage() {
         <section className="bg-tomato px-4 py-24 text-cream sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="reveal-on-scroll reveal-soft flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-              <SectionHeading eyebrow="Specials" light title="Seasonal offers, bold nights, and family meals." text="Papazzio's specials include happy hour, Winesdays, La Dolce Notte, Sunday steak, and weekday family meals." />
-              <Link className="button button-light shrink-0" href="/specials">View Specials</Link>
+              <SectionHeading eyebrow="Specials & Experiences" light title="Four reasons to plan your next visit." text="A curated look at Papazzio's most guest-friendly promotions, from Thursday date night to Sunday steak." />
+              <Link className="button button-light shrink-0" href="/specials">View All Specials</Link>
             </div>
-            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {specials.map((item, index) => (
-                <Link className={`special-mini reveal-on-scroll ${index % 3 === 0 ? "reveal-left" : index % 3 === 1 ? "reveal-soft reveal-delay-1" : "reveal-right reveal-delay-2"} group`} href={item.href || "/specials"} key={item.title}>
-                  <Photo alt={item.title} className="absolute inset-0 opacity-55 transition duration-500 group-hover:scale-105 group-hover:opacity-72" src={item.image} />
-                  <span className="relative mt-auto block">
-                    <span className="block text-xs font-black uppercase tracking-[0.2em] text-gold">{item.subtitle}</span>
-                    <span className="mt-2 block font-heading text-3xl font-black leading-none">{item.title}</span>
-                  </span>
-                </Link>
+            <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {featuredSpecials.map((item, index) => (
+                <article className={`experience-card reveal-on-scroll ${index % 2 === 0 ? "reveal-left" : "reveal-right"} group`} key={item.title}>
+                  <Photo alt={item.title} className="absolute inset-0 transition duration-500 group-hover:scale-105" src={item.image} />
+                  <div className="relative mt-auto">
+                    <p className="text-xs font-black uppercase tracking-[0.2em] text-gold">{item.subtitle}</p>
+                    <h3 className="mt-3 font-heading text-4xl font-black leading-none">{item.title}</h3>
+                    <p className="mt-4 text-sm font-bold leading-6 text-cream/76">{item.description}</p>
+                    <Link className="button button-light mt-6" href="/specials">View All Specials</Link>
+                  </div>
+                </article>
               ))}
             </div>
           </div>

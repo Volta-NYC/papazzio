@@ -117,7 +117,7 @@ export const specials = [
   {
     title: "Thursday Prix Fixe / Date Night",
     subtitle: "La Dolce Notte",
-    details: ["$79 / Couple", "Thursdays Only", "Fresh seasonal prix fixe menu"],
+    details: ["Thursday Date Night + Live Music", "$79 / Couple", "Every Thursday evening"],
     href: "/specials/thursday-prix-fixe",
     cta: "View Date Night",
     image: images.dolceNotte
@@ -155,6 +155,41 @@ export const specials = [
     image: images.liveMusic
   }
 ]
+
+export const featuredSpecials = [
+  {
+    title: "La Dolce Notte",
+    subtitle: "Thursday Date Night + Live Music",
+    description: "A Thursday prix fixe for two paired with the warm energy of Papazzio's live music nights.",
+    href: "/specials/thursday-prix-fixe",
+    image: images.dolceNotte
+  },
+  {
+    title: "Happy Hour",
+    subtitle: "Weekday Happy Hour",
+    description: "Weekday bar-area specials with 50% off wine and beer plus a focused happy hour menu.",
+    href: "/specials/happy-hour",
+    image: images.happyHour
+  },
+  {
+    title: "WINEsday",
+    subtitle: "50% Off Bottles of Wine",
+    description: "Midweek wine night with half-off bottles and BYOW with no cork fee when dining in.",
+    href: "/specials/winesday",
+    image: images.winesday
+  },
+  {
+    title: "Sunday Steak Night",
+    subtitle: "Steak & Seafood Special",
+    description: "A Sunday steak-and-seafood dinner built around ribeye, shrimp scampi, and classic sides.",
+    href: "/specials/sunday-steak-night",
+    image: images.steak
+  }
+]
+
+export const moreSpecials = specials.filter((special) =>
+  ["Martini Monday", "Pasta Tuesday", "Takeout Specials"].includes(special.title)
+)
 
 export const galleryImages = [
   { alt: "Papazzio main dining room", src: images.diningRoom },

@@ -214,6 +214,33 @@ img {
   position: absolute;
 }
 
+.experience-card {
+  align-items: flex-end;
+  background: #1f1b16;
+  border: 1px solid rgb(255 248 232 / 0.36);
+  box-shadow: 8px 8px 0 rgb(31 27 22 / 0.3);
+  color: #fff8e8;
+  display: flex;
+  min-height: 27rem;
+  overflow: hidden;
+  padding: 1.4rem;
+  position: relative;
+}
+
+.experience-card::after {
+  background: linear-gradient(to top, rgb(0 0 0 / 0.82), rgb(0 0 0 / 0.36) 58%, rgb(0 0 0 / 0.12));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.experience-card img {
+  height: 100%;
+  max-width: none;
+  opacity: 0.72;
+  width: 100%;
+}
+
 .special-panel {
   display: grid;
   overflow: hidden;
