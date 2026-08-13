@@ -39,14 +39,14 @@ export default async function SpecialDetailPage({ params }: SpecialRouteProps) {
 
   return (
     <PageShell>
-      <main className="bg-paper">
+      <main id="main-content" className="bg-paper">
         <section className="relative overflow-hidden bg-ink px-4 pb-20 pt-36 text-cream sm:px-6 lg:px-8">
           <div className="absolute inset-0 opacity-36">
             <Photo alt={page.title} src={page.image} />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/88 to-ink/24" />
           <div className="relative mx-auto max-w-7xl">
-            <SectionHeading eyebrow={page.eyebrow} light title={page.title} text={page.subtitle} />
+            <SectionHeading as="h1" eyebrow={page.eyebrow} light title={page.title} text={page.subtitle} />
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="button button-outline-light" href="/specials">All Specials</Link>
               {page.ctaHref && page.ctaLabel ? (

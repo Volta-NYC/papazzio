@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.3fr_0.7fr_0.7fr]">
         <div>
           <img alt="Papazzio" className="h-16 w-52 object-contain brightness-0 invert" src={images.logo} />
-          <p className="mt-4 max-w-xl text-base leading-7 text-cream/68">{site.description}</p>
+          <p className="mt-4 max-w-xl text-base leading-7 text-cream/82">{site.description}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a className="button button-gold" href={site.orderUrl}>Order Online</a>
             <a className="button button-outline-light" href={site.phoneHref}>Call {site.phone}</a>
@@ -48,12 +48,12 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-cream/10 pt-6 text-xs uppercase tracking-[0.18em] text-cream/45 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-cream/10 pt-6 text-xs uppercase tracking-[0.18em] text-cream/72 sm:flex-row sm:items-center sm:justify-between">
         <p>©2025 All Rights Reserved.</p>
         <div className="flex gap-5">
           <a className="transition hover:text-cream" href={site.facebookUrl}>Facebook</a>
           <a className="transition hover:text-cream" href={site.instagramUrl}>Instagram</a>
-          <span className="normal-case tracking-normal">Made by <a href="https://www.novusnyc.org/" target="_blank" rel="noreferrer" className="text-volta-green">Novus</a></span>
+          <span className="normal-case tracking-normal">Made by <a href="https://www.novusnyc.org/" target="_blank" rel="noreferrer" className="text-volta-green">Novus<span className="sr-only">, opens in a new tab</span></a></span>
         </div>
       </div>
     </footer>

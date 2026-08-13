@@ -204,14 +204,14 @@ const supportMenus = [
 export default function CateringPackagesPage() {
   return (
     <PageShell>
-      <main className="bg-paper">
+      <main id="main-content" className="bg-paper">
         <section className="relative overflow-hidden bg-ink px-4 pb-20 pt-36 text-cream sm:px-6 lg:px-8">
           <div className="absolute inset-0 opacity-32">
             <Photo alt="Papazzio event dining room" src={images.cateringParty} />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/28" />
           <div className="relative mx-auto max-w-7xl">
-            <SectionHeading eyebrow="On-Site Catering" light title="Our Catering Packages for On-site Events" text="Call 718.229.1962 to plan your event today. Papazzio's package information and policies are carried over from the current restaurant website." />
+            <SectionHeading as="h1" eyebrow="On-Site Catering" light title="Our Catering Packages for On-site Events" text="Call 718.229.1962 to plan your event today. Papazzio's package information and policies are carried over from the current restaurant website." />
             <div className="mt-8 flex flex-wrap gap-3">
               <a className="button button-gold" href={site.phoneHref}>Call {site.phone}</a>
               <Link className="button button-outline-light" href="/tray-menu">Tray Menu</Link>
@@ -253,7 +253,7 @@ export default function CateringPackagesPage() {
               {cakeMenu.map((item) => (
                 <article className="reveal-on-scroll reveal-soft border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5" key={item.title}>
                   <h3 className="font-heading text-3xl font-black">{item.title}</h3>
-                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/68">
+                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/78">
                     {item.items.map((detail) => <li key={detail}>{detail}</li>)}
                   </ul>
                 </article>
@@ -262,6 +262,21 @@ export default function CateringPackagesPage() {
           </div>
         </section>
 
+        <section className="bg-paper px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <SectionHeading eyebrow="Wine Menu" title="Wine selections for events." text="Use these selections as a planning reference for private dining, bar service, and special event conversations." />
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {wineMenu.map((item) => (
+                <article className="reveal-on-scroll reveal-soft border border-ink/10 bg-cream p-6 shadow-lg shadow-ink/5" key={item.title}>
+                  <h3 className="font-heading text-3xl font-black">{item.title}</h3>
+                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/78">
+                    {item.items.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
         <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionHeading eyebrow="More Options" title="Add-ons." text="Package add-ons are connected here so visitors can move directly into the right catering option." />
@@ -269,7 +284,7 @@ export default function CateringPackagesPage() {
               {supportMenus.map((item) => (
                 <a className="reveal-on-scroll reveal-soft border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5 transition hover:-translate-y-1 hover:border-tomato" href={item.href} key={item.title}>
                   <h3 className="font-heading text-3xl font-black">{item.title}</h3>
-                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/68">
+                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/78">
                     {item.details.map((detail) => <li key={detail}>{detail}</li>)}
                   </ul>
                 </a>

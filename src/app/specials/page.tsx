@@ -6,10 +6,10 @@ import { featuredSpecials, moreSpecials, site } from "@/lib/content"
 export default function SpecialsPage() {
   return (
     <PageShell>
-      <main className="bg-ink text-cream">
+      <main id="main-content" className="bg-ink text-cream">
         <section className="px-4 pb-16 pt-36 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionHeading eyebrow="Specials" light title="Current promotions, curated for easier planning." text="Start with Papazzio's strongest weekly experiences, then browse smaller recurring ways to enjoy the restaurant." />
+            <SectionHeading as="h1" eyebrow="Specials" light title="Current promotions, curated for easier planning." text="Start with Papazzio's strongest weekly experiences, then browse smaller recurring ways to enjoy the restaurant." />
           </div>
         </section>
 
@@ -48,7 +48,7 @@ export default function SpecialsPage() {
                   <div className="relative mt-auto">
                     <p className="text-xs font-black uppercase tracking-[0.2em] text-gold">{special.subtitle}</p>
                     <h3 className="mt-3 font-heading text-3xl font-black leading-none text-cream">{special.title}</h3>
-                    <p className="mt-4 text-sm font-bold leading-6 text-cream/72">{special.details[0]}</p>
+                    <p className="mt-4 text-sm font-bold leading-6 text-cream">{special.details[0]}</p>
                     <a className="button button-light mt-6" href={special.href}>View Details</a>
                   </div>
                 </article>

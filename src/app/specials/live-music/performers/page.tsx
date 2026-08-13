@@ -13,7 +13,7 @@ export const metadata = {
 export default function LiveMusicPerformersPage() {
   return (
     <PageShell>
-      <main className="bg-paper">
+      <main id="main-content" className="bg-paper">
         <section className="relative overflow-hidden bg-ink px-4 pb-20 pt-36 text-cream sm:px-6 lg:px-8">
           <div className="absolute inset-0 opacity-38">
             <Photo alt="Papazzio live music dinner" src={images.liveMusic} />
@@ -21,6 +21,7 @@ export default function LiveMusicPerformersPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/86 to-ink/20" />
           <div className="relative mx-auto max-w-7xl">
             <SectionHeading
+              as="h1"
               eyebrow="This Month's Performers"
               light
               text="Papazzio hosts live music every Thursday from 6:30 PM to 9:30 PM. This month's performer schedule is being prepared."

@@ -9,7 +9,7 @@ export function SiteHeader() {
         <Link className="group flex items-center" href="/" aria-label="Papazzio home">
           <span className="flex items-center gap-3 leading-none">
             <img alt="Papazzio" className="h-14 w-40 object-contain brightness-0 invert sm:h-16 sm:w-48" src={images.logo} />
-            <span className="block text-[0.62rem] font-bold uppercase tracking-[0.28em] text-cream/58">Bayside · NY</span>
+            <span className="block text-[0.62rem] font-bold uppercase tracking-[0.28em] text-cream/78">Bayside · NY</span>
           </span>
         </Link>
 
@@ -30,6 +30,13 @@ export function SiteHeader() {
           </a>
         </div>
       </div>
+      <nav className="mobile-nav lg:hidden" aria-label="Primary navigation">
+        {navItems.map((item) => (
+          <Link className="mobile-nav-link" href={item.href} key={item.href}>
+            {item.label}
+          </Link>
+        ))}
+      </nav>
     </header>
   )
 }

@@ -11,7 +11,7 @@ const ticker = ["Authentic Italian cuisine", "Craft cocktails", "Wine and beer",
 export default function HomePage() {
   return (
     <PageShell>
-      <main>
+      <main id="main-content">
         <section className="relative min-h-[96svh] overflow-hidden bg-ink pt-28 text-cream sm:min-h-screen">
           <div className="absolute inset-0 opacity-42">
             <Photo alt="Papazzio dining table" className="hero-photo" src={images.hero} />
@@ -170,7 +170,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
             <SectionHeading eyebrow="Visit" title="Pull up on Bell Boulevard." text="Papazzio Restaurant is located at 39-38 Bell Boulevard in Bayside, NY." />
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <a className="button button-dark" href={site.mapsUrl} rel="noreferrer" target="_blank">Get Directions</a>
+              <a className="button button-dark" href={site.mapsUrl} rel="noreferrer" target="_blank">Get Directions<span className="sr-only">, opens in a new tab</span></a>
               <a className="button button-outline-dark" href={site.phoneHref}>Call {site.phone}</a>
             </div>
           </div>
@@ -201,10 +201,10 @@ function InfoCard({ className = "", lines, title }: { className?: string; lines:
         <div className="mt-4 grid gap-3">
           {hours.map((item) => (
             <div className="border-t border-ink/12 pt-3" key={item.label}>
-              <p className="text-xs font-black uppercase tracking-[0.16em] text-ink/54">{item.label}</p>
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-ink/72">{item.label}</p>
               <p className="font-heading text-4xl font-black leading-none text-ink sm:text-5xl">
-                <span>{item.value.replace(/(AM|PM)/, "")}</span>
-                <span className="ml-1 text-xl sm:text-2xl">{item.value.match(/AM|PM/)?.[0]}</span>
+                <span>{item.value.replace(/(AM|PM)/g, "")}</span>
+                <span className="ml-1 text-xl sm:text-2xl">{item.value.match(/AM|PM/)?.[0]}M</span>
               </p>
             </div>
           ))}

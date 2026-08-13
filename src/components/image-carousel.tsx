@@ -11,27 +11,36 @@ type CarouselImage = {
 
 export function ImageCarousel({ images }: { images: CarouselImage[] }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
+    if (isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return
+    }
+
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % images.length)
     }, 5000)
 
     return () => window.clearInterval(timer)
-  }, [images.length])
+  }, [images.length, isPaused])
 
   const activeImage = images[activeIndex]
 
   return (
     <div className="gallery-carousel">
-      <div className="gallery-carousel-main">
+      <div className="gallery-carousel-main" aria-live={isPaused ? "polite" : "off"}>
         <Photo alt={activeImage.alt} fit="contain" src={activeImage.src} />
       </div>
       <div className="gallery-carousel-controls">
         <button aria-label="Previous photo" onClick={() => setActiveIndex((activeIndex - 1 + images.length) % images.length)} type="button">
           ‹
         </button>
-        <div className="gallery-carousel-dots" aria-label="Gallery photos">
+        <button className="gallery-carousel-toggle" aria-pressed={isPaused} onClick={() => setIsPaused((current) => !current)} type="button">
+          {isPaused ? "Play" : "Pause"}
+          <span className="sr-only"> photo carousel</span>
+        </button>
+        <div className="gallery-carousel-dots" aria-label="Gallery photos" role="group">
           {images.map((image, index) => (
             <button
               aria-label={`Show ${image.alt}`}

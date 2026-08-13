@@ -29,7 +29,7 @@ const cateringCards = [
 export default function CateringPage() {
   return (
     <PageShell>
-      <main className="bg-paper">
+      <main id="main-content" className="bg-paper">
         <section className="relative overflow-hidden bg-ink px-4 pb-20 pt-36 text-cream sm:px-6 lg:px-8">
           <div className="absolute inset-0 opacity-28">
             <Photo alt="Papazzio catering spread" src={images.cateringHero} />
@@ -37,7 +37,7 @@ export default function CateringPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/35" />
           <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.82fr] lg:items-end">
             <div>
-              <SectionHeading eyebrow="Catering" light title={catering.title} text={catering.paragraphs.slice(0, 2).join(" ")} />
+              <SectionHeading as="h1" eyebrow="Catering" light title={catering.title} text={catering.paragraphs.slice(0, 2).join(" ")} />
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a className="button button-gold" href={site.phoneHref}>Call {site.phone}</a>
                 <a className="button button-outline-light" href={site.emailHref}>Email Catering</a>
@@ -112,7 +112,7 @@ function Feature({ className = "", text, title }: { className?: string; text: st
   return (
     <article className={`reveal-on-scroll border-l-4 border-tomato bg-cream p-5 shadow-lg shadow-ink/5 ${className}`}>
       <h2 className="font-heading text-2xl font-black">{title}</h2>
-      <p className="mt-2 text-sm font-semibold leading-6 text-ink/68">{text}</p>
+      <p className="mt-2 text-sm font-semibold leading-6 text-ink/78">{text}</p>
     </article>
   )
 }

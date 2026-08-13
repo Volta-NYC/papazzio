@@ -120,14 +120,14 @@ export default async function MenuDetailPage({ params }: MenuRouteProps) {
 
   return (
     <PageShell>
-      <main className="bg-paper">
+      <main id="main-content" className="bg-paper">
         <section className="relative overflow-hidden bg-ink px-4 pb-20 pt-36 text-cream sm:px-6 lg:px-8">
           <div className="absolute inset-0 opacity-30">
             <Photo alt={page.title} src={page.image} />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/88 to-ink/30" />
           <div className="relative mx-auto max-w-7xl">
-            <SectionHeading eyebrow="Papazzio Menu" light title={page.title} text="Current menu information from Papazzio's website, organized for easier browsing." />
+            <SectionHeading as="h1" eyebrow="Papazzio Menu" light title={page.title} text="Current menu information from Papazzio's website, organized for easier browsing." />
             <div className="mt-8 flex flex-wrap gap-3">
               {menuLinks.map((link) => (
                 <Link className={`button ${link.href.endsWith(menuSlug) ? "button-gold" : "button-outline-light"}`} href={link.href} key={link.href}>
@@ -145,7 +145,7 @@ export default async function MenuDetailPage({ params }: MenuRouteProps) {
               <p className="text-xs font-black uppercase tracking-[0.22em] text-tomato">Sections</p>
               <div className="mt-5 grid gap-2">
                 {sections.map((section) => (
-                  <a className="text-sm font-bold text-ink/65 transition hover:text-tomato" href={`#${slugify(section.title)}`} key={section.title}>
+                  <a className="text-sm font-bold text-ink/78 transition hover:text-tomato" href={`#${slugify(section.title)}`} key={section.title}>
                     {section.title}
                   </a>
                 ))}

@@ -28,9 +28,47 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+iframe:focus-visible {
+  outline: 3px solid #f0c35a;
+  outline-offset: 4px;
+}
+
 img {
   display: block;
   max-width: 100%;
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skip-link {
+  background: #f0c35a;
+  color: #1f1b16;
+  font-size: 0.9rem;
+  font-weight: 900;
+  left: 1rem;
+  padding: 0.8rem 1rem;
+  position: fixed;
+  text-transform: uppercase;
+  top: 1rem;
+  transform: translateY(-180%);
+  transition: transform 180ms ease;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 ::selection {
@@ -179,6 +217,29 @@ img {
   transform: translateX(0);
 }
 
+.mobile-nav {
+  border-top: 1px solid rgb(255 248 232 / 0.12);
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  padding: 0.35rem 0.75rem 0.65rem;
+  scrollbar-width: none;
+}
+
+.mobile-nav-link {
+  color: rgb(255 248 232 / 0.88);
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  padding: 0.7rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.mobile-nav-link:hover {
+  color: #f0c35a;
+}
+
 .ticker-track {
   animation: ticker 26s linear infinite;
 }
@@ -242,6 +303,10 @@ img {
   width: 100%;
 }
 
+.bg-tomato .eyebrow.text-gold {
+  color: #fff8e8;
+}
+
 .secondary-special {
   align-items: flex-end;
   background: #1f1b16;
@@ -255,7 +320,7 @@ img {
 }
 
 .secondary-special::after {
-  background: linear-gradient(to top, rgb(0 0 0 / 0.78), rgb(0 0 0 / 0.22) 64%, rgb(0 0 0 / 0.04));
+  background: linear-gradient(to top, rgb(0 0 0 / 0.92), rgb(0 0 0 / 0.62) 64%, rgb(0 0 0 / 0.24));
   content: "";
   inset: 0;
   position: absolute;
@@ -549,6 +614,15 @@ img {
   line-height: 1;
   transition: background-color 180ms ease, transform 180ms ease;
   width: 3rem;
+}
+
+.gallery-carousel-controls > button.gallery-carousel-toggle {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  min-width: 5.5rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  width: auto;
 }
 
 .gallery-carousel-controls > button:hover {

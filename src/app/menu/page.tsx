@@ -19,14 +19,14 @@ export default function MenuPage() {
 
   return (
     <PageShell>
-      <main className="bg-paper">
+      <main id="main-content" className="bg-paper">
         <section className="relative overflow-hidden bg-ink px-4 pb-20 pt-36 text-cream sm:px-6 lg:px-8">
           <div className="absolute inset-0 opacity-35">
             <Photo alt="Papazzio menu dish" src={images.oysters} />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/86 to-ink/30" />
           <div className="relative mx-auto max-w-7xl">
-            <SectionHeading eyebrow="Our Menu" light title="Finest and freshest ingredients." text="At Papazzio we strive to use only the finest and freshest ingredients. Our goal is excellent service and delicious food for everyone who enters our door." />
+            <SectionHeading as="h1" eyebrow="Our Menu" light title="Finest and freshest ingredients." text="At Papazzio we strive to use only the finest and freshest ingredients. Our goal is excellent service and delicious food for everyone who enters our door." />
             <div className="mt-8 flex flex-wrap gap-3">
               {menuLinks.map((link) => (
                 <a className="button button-outline-light" href={link.href} key={link.href}>{link.label}</a>

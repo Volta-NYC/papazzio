@@ -6,6 +6,7 @@ export function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ScrollReveal />
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <SiteHeader />
       {children}
       <SiteFooter />

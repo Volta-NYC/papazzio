@@ -6,18 +6,18 @@ import { hours, images, site } from "@/lib/content"
 export default function ContactPage() {
   return (
     <PageShell>
-      <main className="bg-paper">
+      <main id="main-content" className="bg-paper">
         <section className="grid min-h-screen bg-ink pt-20 text-cream lg:grid-cols-[0.95fr_1.05fr]">
           <div className="flex items-center px-4 py-20 sm:px-6 lg:px-12">
             <div className="max-w-2xl">
-              <SectionHeading eyebrow="Reservations" light title="Contact us. Reserve A Table. Find Us." text="Papazzio Restaurant & Caterer is located at 39-38 Bell Boulevard in Bayside, NY." />
+              <SectionHeading as="h1" eyebrow="Reservations" light title="Contact us. Reserve A Table. Find Us." text="Papazzio Restaurant & Caterer is located at 39-38 Bell Boulevard in Bayside, NY." />
               <div className="mt-9 grid gap-3 text-lg font-bold text-cream/78">
                 <a href={site.emailHref}>{site.email}</a>
                 <a href={site.phoneHref}>{site.phone}</a>
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a className="button button-gold" href={site.phoneHref}>Call {site.phone}</a>
-                <a className="button button-outline-light" href={site.mapsUrl} rel="noreferrer" target="_blank">Get Directions</a>
+                <a className="button button-outline-light" href={site.mapsUrl} rel="noreferrer" target="_blank">Get Directions<span className="sr-only">, opens in a new tab</span></a>
               </div>
             </div>
           </div>
