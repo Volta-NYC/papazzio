@@ -9,7 +9,6 @@ const packages = [
   {
     title: "Premiere Package - Afternoon",
     price: "$43.95 per person",
-    href: "https://www.papazzio.com/premiere-afternoon",
     details: [
       "Available Saturdays and Sundays, 12-4 pm or 1-5 pm.",
       "30-adult minimum for exclusive use.",
@@ -47,7 +46,6 @@ const packages = [
   {
     title: "Buffet Package",
     price: "$41.95 per person",
-    href: "https://www.papazzio.com/buffet-package",
     details: [
       "Available Saturdays and Sundays from 12-4 pm or 1-5 pm.",
       "30-adult minimum for exclusive use.",
@@ -94,7 +92,6 @@ const packages = [
   {
     title: "Lunch Package",
     price: "$27.95 per person",
-    href: "https://www.papazzio.com/lunch-package",
     details: [
       "Three-course prix fixe available on-site Wednesday-Friday, 12:00-4:00 pm.",
       "Includes a curated three-course menu with coffee or soda.",
@@ -132,7 +129,6 @@ const packages = [
   {
     title: "Premiere Package - Evening",
     price: "$49.95 per person",
-    href: "https://www.papazzio.com/premiere-evening",
     details: [
       "Available Monday-Thursday after 3:00 pm, based on availability.",
       "Complete four-course Italian meal; gluten-free +$3.",
@@ -197,42 +193,16 @@ const cakeMenu = [
   }
 ]
 
-const wineMenu = [
-  { title: "Spumante", items: ["Prosecco, Torresella | Trento", "Champagne, Veuve Clicquot | France", "Lambrusco, Quercioli | Emilia Romagna", "Moscato d'Asti, Villa Rosa | Piedmont"] },
-  {
-    title: "Bianco",
-    items: [
-      "Chardonnay, Rodney Strong | Sonoma",
-      "Greco Bianco, Librandi | Calabria",
-      "Sauvignon Blanc, Kim Crawford | New Zealand",
-      "Sauvignon Blanc, Prodigo | Friuli",
-      "Pinot Grigio, Livio Felluga | Collio",
-      "Pinot Grigio, Torresella | Veneto",
-      "Rose, Whispering Angel | Italy",
-      "Vermentino, Argiolas Costamolino | Sardinia"
-    ]
-  },
-  {
-    title: "Rosso Italiano",
-    items: [
-      "Baby Amarone, Veronese Alanera | Calabria",
-      "Chianti Classico, Monsanto | Barberino",
-      "Nero d'Avola, John Dapetrosino | Sicilia",
-      "Pinot Nero, Cantina Tramin | Trentino",
-      "Primitivo, Masseria Li Veli | Puglia",
-      "Super Tuscan, Barco Reale | Tuscany",
-      "Valpolicella, Tenuta Sant'Antonio | Veneto"
-    ]
-  },
-  { title: "Rosso Americano", items: ["Cabernet Sauvignon, Charles Krug | Napa Valley", "Cabernet Sauvignon, Jordan | Sonoma County", "Cabernet Sauvignon, Freakshow | Lodi", "Merlot, Charles Krug | Napa Valley"] },
-  { title: "Rosso Argentino", items: ["Malbec Org, Domaine Bousquet | Mendoza", "Pinot Noir Org, Domaine Bousquet | Mendoza"] }
-]
-
 const supportMenus = [
   {
     title: "Additional Options",
     href: "https://www.papazzio.com/additionals-menu",
     details: ["Family-style appetizers", "Passed hors d'oeuvres", "Open bar options", "Fruit, cookies, pastries, valet, and color napkin add-ons"]
+  },
+  {
+    title: "Wine Menu",
+    href: "/wine-menu",
+    details: ["Browse Papazzio's current wine selection"]
   },
   {
     title: "Tray Menu",
@@ -281,7 +251,6 @@ export default function CateringPackagesPage() {
                     </div>
                   ))}
                 </div>
-                <a className="button button-dark mt-6" href={item.href}>View Full Package</a>
               </article>
             ))}
           </div>
@@ -303,26 +272,10 @@ export default function CateringPackagesPage() {
           </div>
         </section>
 
-        <section className="bg-paper px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <SectionHeading eyebrow="Wine Menu" title="Wine selections for events." text="Use these selections as a planning reference for private dining, bar service, and special event conversations." />
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {wineMenu.map((item) => (
-                <article className="reveal-on-scroll reveal-soft border border-ink/10 bg-cream p-6 shadow-lg shadow-ink/5" key={item.title}>
-                  <h3 className="font-heading text-3xl font-black">{item.title}</h3>
-                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/68">
-                    {item.items.map((detail) => <li key={detail}>{detail}</li>)}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionHeading eyebrow="More Options" title="Add-ons and take-home trays." text="Package add-ons and tray menus are connected here so visitors can move directly into the right catering option." />
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
               {supportMenus.map((item) => (
                 <a className="reveal-on-scroll reveal-soft border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5 transition hover:-translate-y-1 hover:border-tomato" href={item.href} key={item.title}>
                   <h3 className="font-heading text-3xl font-black">{item.title}</h3>

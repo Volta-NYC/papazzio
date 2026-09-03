@@ -232,6 +232,7 @@ img {
   content: "";
   inset: 0;
   position: absolute;
+  pointer-events: none;
 }
 
 .experience-card img {
@@ -258,6 +259,7 @@ img {
   content: "";
   inset: 0;
   position: absolute;
+  pointer-events: none;
 }
 
 .secondary-special img {

@@ -3,7 +3,7 @@ import Link from "next/link"
 import { PageShell } from "@/components/page-shell"
 import { Photo } from "@/components/photo"
 import { SectionHeading } from "@/components/section-heading"
-import { images, liveMusicPerformers, site } from "@/lib/content"
+import { images, site } from "@/lib/content"
 
 export const metadata = {
   description: "Monthly live music performers at Papazzio in Bayside, Queens.",
@@ -23,8 +23,8 @@ export default function LiveMusicPerformersPage() {
             <SectionHeading
               eyebrow="This Month's Performers"
               light
-              text="Papazzio hosts live music every Thursday from 6:30 PM to 9:30 PM. Performer lineups may change, so call ahead when planning around a specific artist."
-              title="Live music at Papazzio."
+              text="Papazzio hosts live music every Thursday from 6:30 PM to 9:30 PM. This month's performer schedule is being prepared."
+              title="This month's lineup is under construction."
             />
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="button button-outline-light" href="/specials/live-music">Back to Live Music</Link>
@@ -40,23 +40,16 @@ export default function LiveMusicPerformersPage() {
               <p className="eyebrow text-tomato">Monthly Listings</p>
               <div className="mt-5 space-y-4 text-sm font-bold leading-6 text-ink/70">
                 <p>Every Thursday • 6:30 PM-9:30 PM</p>
-                <p>The latest publicly visible performer feature lists Leo and Ailatan/Natalia. Call Papazzio for the current month&apos;s exact dates.</p>
+                <p>Daniel is currently building the performer groups. Please call Papazzio for the current month&apos;s details.</p>
               </div>
             </aside>
 
-            <div className="grid gap-6">
-              {liveMusicPerformers.map((performer, index) => (
-                <article className={`reveal-on-scroll ${index % 2 === 0 ? "reveal-right" : "reveal-left"} menu-section`} key={performer.name}>
-                  <p className="eyebrow text-tomato">Featured Artist</p>
-                  <h2 className="mt-3">{performer.name}</h2>
-                  <p className="mt-6 text-base font-bold leading-7 text-ink/72">{performer.bio}</p>
-                  <div className="mt-6 grid gap-3">
-                    {performer.dates.map((date) => (
-                      <p className="border-t border-ink/12 pt-3 text-base font-bold leading-7 text-ink/72" key={date}>{date}</p>
-                    ))}
-                  </div>
-                </article>
-              ))}
+            <div className="menu-section reveal-on-scroll reveal-right flex min-h-[18rem] items-center justify-center text-center">
+              <div>
+                <p className="eyebrow text-tomato">Coming Soon</p>
+                <h2 className="mt-3">Performance schedule under construction.</h2>
+                <p className="mx-auto mt-6 max-w-xl text-base font-bold leading-7 text-ink/72">Please call Papazzio to confirm this month&apos;s performers and dates.</p>
+              </div>
             </div>
           </div>
         </section>

@@ -86,7 +86,7 @@ export default function HomePage() {
               <div className="about-image-frame">
                 <Photo alt="Papazzio restaurant interior" className="aspect-[5/4]" src={images.diningRoom} />
               </div>
-              <div className="absolute -bottom-8 right-8 max-w-sm bg-ink p-6 text-cream">
+              <div className="absolute bottom-4 right-4 max-w-[15rem] bg-ink p-4 text-cream sm:-bottom-8 sm:right-8 sm:max-w-sm sm:p-6">
                 <p className="font-heading text-3xl font-black leading-tight">Warm brick, white tablecloths, and the neighborhood dining room atmosphere Papazzio is known for.</p>
               </div>
             </div>
@@ -102,8 +102,7 @@ export default function HomePage() {
             <div className="mt-12 grid gap-5 md:grid-cols-3">
               {menuPreview.map((group, index) => (
                 <article className={`reveal-on-scroll ${index === 0 ? "reveal-left" : index === 1 ? "reveal-soft reveal-delay-1" : "reveal-right reveal-delay-2"} group border border-cream/14 bg-cream/[0.04] p-7 transition hover:-translate-y-1 hover:bg-cream/[0.08]`} key={group.title}>
-                  <p className="font-heading text-6xl font-black text-tomato/80">0{index + 1}</p>
-                  <h3 className="mt-6 font-heading text-3xl font-black">{group.title}</h3>
+                  <h3 className="font-heading text-3xl font-black">{group.title}</h3>
                   <ul className="mt-5 space-y-3 text-sm leading-6 text-cream/70">
                     {group.items.map((item) => (
                       <li className="border-t border-cream/12 pt-3" key={item}>{item}</li>
@@ -129,7 +128,7 @@ export default function HomePage() {
                     <p className="text-xs font-black uppercase tracking-[0.2em] text-gold">{item.subtitle}</p>
                     <h3 className="mt-3 font-heading text-4xl font-black leading-none">{item.title}</h3>
                     <p className="mt-4 text-sm font-bold leading-6 text-cream/76">{item.description}</p>
-                    <Link className="button button-light mt-6" href="/specials">View All Specials</Link>
+                    <Link className="button button-light mt-6" href={item.href}>View Details</Link>
                   </div>
                 </article>
               ))}
@@ -161,7 +160,9 @@ export default function HomePage() {
             <div className="reveal-on-scroll reveal-soft mb-10 text-cream">
               <SectionHeading eyebrow="Gallery" light title="A closer look at Papazzio." text="Restaurant, food, wine, and event photos from Papazzio's current website and supplied assets." />
             </div>
-            <ImageCarousel images={galleryImages} />
+            <div className="mx-auto max-w-5xl">
+              <ImageCarousel images={galleryImages} />
+            </div>
           </div>
         </section>
 
@@ -201,12 +202,15 @@ function InfoCard({ className = "", lines, title }: { className?: string; lines:
           {hours.map((item) => (
             <div className="border-t border-ink/12 pt-3" key={item.label}>
               <p className="text-xs font-black uppercase tracking-[0.16em] text-ink/54">{item.label}</p>
-              <p className="font-heading text-3xl font-black leading-none text-ink sm:text-4xl">{item.value}</p>
+              <p className="font-heading text-4xl font-black leading-none text-ink sm:text-5xl">
+                <span>{item.value.replace(/(AM|PM)/, "")}</span>
+                <span className="ml-1 text-xl sm:text-2xl">{item.value.match(/AM|PM/)?.[0]}</span>
+              </p>
             </div>
           ))}
         </div>
       ) : (
-        <div className="mt-4 space-y-1 font-heading text-2xl font-black leading-tight text-ink">
+        <div className="mt-4 space-y-1 font-heading text-4xl font-black leading-tight text-ink sm:text-5xl">
           {lines.map((line) => (
             <p key={line}>{line}</p>
           ))}

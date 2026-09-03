@@ -69,9 +69,9 @@ export const images = {
 export const menuLinks = [
   { label: "Dinner Menu", href: "/dinner-menu" },
   { label: "Lunch Menu", href: "/lunch-menu" },
-  { label: "Tray Menu", href: "/tray-menu" },
   { label: "Dessert Menu", href: "/dessert-menu" },
-  { label: "Wine Menu", href: "/wine-menu" }
+  { label: "Wine Menu", href: "/wine-menu" },
+  { label: "Tray Menu", href: "/tray-menu" }
 ]
 
 export const menuPreview = [
@@ -110,7 +110,7 @@ export const specials = [
     title: "WINEsday",
     subtitle: "Wednesday",
     details: ["50% off all Wine Bottles", "BYOW - No Cork Fee - Bring your Own Wine", "Valid with one entree - no other promos"],
-    href: "/specials/winesday",
+    href: "/wine-menu",
     cta: "View WINEsday",
     image: images.winesday
   },
@@ -175,7 +175,7 @@ export const featuredSpecials = [
     title: "WINEsday",
     subtitle: "50% Off Bottles of Wine",
     description: "Midweek wine night with half-off bottles and BYOW with no cork fee when dining in.",
-    href: "/specials/winesday",
+    href: "/wine-menu",
     image: images.winesday
   },
   {

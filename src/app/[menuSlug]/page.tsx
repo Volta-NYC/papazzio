@@ -212,7 +212,12 @@ function parseMenu(content: string, fallbackTitle: string, slug: string): MenuSe
     sections.push(current)
   }
 
-  return sections.filter((section) => section.lines.length > 0)
+  return sections
+    .map((section) => ({
+      ...section,
+      lines: section.lines.filter((line) => !isOrphanedPrice(line))
+    }))
+    .filter((section) => section.lines.length > 0)
 }
 
 function lineBreaks(content: string, slug: string) {
@@ -303,6 +308,10 @@ function parseLine(line: string, slug: string): MenuLine {
 
 function normalizePrice(value: string) {
   return value.replace(/\s+/g, " ").replace("$ ", "$").trim()
+}
+
+function isOrphanedPrice(line: MenuLine) {
+  return line.isNote && /^\$?\s?\d{1,3}(?:\.\d{2})?(?:\s?\/\s?\$?\s?\d{1,3}(?:\.\d{2})?)*$/.test(line.title)
 }
 
 function normalizeHeading(line: string) {
