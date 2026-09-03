@@ -25,7 +25,7 @@ export function ImageCarousel({ images }: { images: CarouselImage[] }) {
   return (
     <div className="gallery-carousel">
       <div className="gallery-carousel-main">
-        <Photo alt={activeImage.alt} src={activeImage.src} />
+        <Photo alt={activeImage.alt} fit="contain" src={activeImage.src} />
       </div>
       <div className="gallery-carousel-controls">
         <button aria-label="Previous photo" onClick={() => setActiveIndex((activeIndex - 1 + images.length) % images.length)} type="button">

@@ -198,16 +198,6 @@ const supportMenus = [
     title: "Additional Options",
     href: "https://www.papazzio.com/additionals-menu",
     details: ["Family-style appetizers", "Passed hors d'oeuvres", "Open bar options", "Fruit, cookies, pastries, valet, and color napkin add-ons"]
-  },
-  {
-    title: "Wine Menu",
-    href: "/wine-menu",
-    details: ["Browse Papazzio's current wine selection"]
-  },
-  {
-    title: "Tray Menu",
-    href: "/tray-menu",
-    details: ["Take-home trays for at-home events", "Small trays serve 9-10", "Large trays serve 18-20", "Gluten-free tray options available"]
   }
 ]
 
@@ -274,8 +264,8 @@ export default function CateringPackagesPage() {
 
         <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionHeading eyebrow="More Options" title="Add-ons and take-home trays." text="Package add-ons and tray menus are connected here so visitors can move directly into the right catering option." />
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
+            <SectionHeading eyebrow="More Options" title="Add-ons." text="Package add-ons are connected here so visitors can move directly into the right catering option." />
+            <div className="mt-10 grid max-w-2xl gap-5">
               {supportMenus.map((item) => (
                 <a className="reveal-on-scroll reveal-soft border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5 transition hover:-translate-y-1 hover:border-tomato" href={item.href} key={item.title}>
                   <h3 className="font-heading text-3xl font-black">{item.title}</h3>

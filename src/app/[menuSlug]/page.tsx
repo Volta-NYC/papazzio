@@ -158,7 +158,7 @@ export default async function MenuDetailPage({ params }: MenuRouteProps) {
                   <h2>{section.title}</h2>
                   <div className="mt-5 grid gap-1">
                     {section.lines.map((line, index) => (
-                      <MenuItem line={line} key={`${line.title}-${index}`} />
+                      <MenuItem hidePrice={page.slug === "wine-menu"} line={line} key={`${line.title}-${index}`} />
                     ))}
                   </div>
                 </section>
@@ -171,7 +171,7 @@ export default async function MenuDetailPage({ params }: MenuRouteProps) {
   )
 }
 
-function MenuItem({ line }: { line: MenuLine }) {
+function MenuItem({ hidePrice = false, line }: { hidePrice?: boolean; line: MenuLine }) {
   if (line.isNote) {
     return <p className="menu-note">{line.title}</p>
   }
@@ -182,7 +182,7 @@ function MenuItem({ line }: { line: MenuLine }) {
         <h3>{line.title}</h3>
         {line.description ? <p>{line.description}</p> : null}
       </div>
-      {line.price ? <span>{line.price}</span> : null}
+      {line.price && !hidePrice ? <span>{line.price}</span> : null}
     </article>
   )
 }
@@ -212,16 +212,20 @@ function parseMenu(content: string, fallbackTitle: string, slug: string): MenuSe
     sections.push(current)
   }
 
-  return sections
+  const cleanedSections = sections
     .map((section) => ({
       ...section,
-      lines: section.lines.filter((line) => !isOrphanedPrice(line))
+      lines: section.lines.filter((line) => !isOrphanedPrice(line) && !isStrayTrayPrice(line, slug))
     }))
     .filter((section) => section.lines.length > 0)
+
+  return organizeMenuSections(cleanedSections, slug)
 }
 
 function lineBreaks(content: string, slug: string) {
   let text = content
+    .replaceAll("wire racks.Wire", "wire racks. Wire")
+    .replaceAll("Gluten-Free:“GF”", "Gluten-Free: “GF”")
   const sectionHeadings = slug === "wine-menu" ? [...baseSectionHeadings, ...wineSectionHeadings] : baseSectionHeadings
 
   for (const heading of sectionHeadings) {
@@ -259,7 +263,6 @@ function parseLine(line: string, slug: string): MenuLine {
     if (line.startsWith("*Ala Mode")) {
       return {
         description: "Vanilla or Chocolate",
-        price: "+$2",
         title: "A la Mode"
       }
     }
@@ -312,6 +315,66 @@ function normalizePrice(value: string) {
 
 function isOrphanedPrice(line: MenuLine) {
   return line.isNote && /^\$?\s?\d{1,3}(?:\.\d{2})?(?:\s?\/\s?\$?\s?\d{1,3}(?:\.\d{2})?)*$/.test(line.title)
+}
+
+function isStrayTrayPrice(line: MenuLine, slug: string) {
+  return slug === "tray-menu" && line.title === "/" && Boolean(line.price)
+}
+
+function organizeMenuSections(sections: MenuSection[], slug: string) {
+  if (slug === "tray-menu") {
+    return organizeTrayMenu(sections)
+  }
+
+  if (slug === "dinner-menu" || slug === "lunch-menu") {
+    return moveGlutenFreePastaNote(sections)
+  }
+
+  return sections
+}
+
+function moveGlutenFreePastaNote(sections: MenuSection[]) {
+  const glutenFreeNotes = sections.flatMap((section) =>
+    section.lines.filter((line) => line.isNote && line.title.startsWith("To substitute Gluten Free penne or spaghetti"))
+  )
+
+  if (glutenFreeNotes.length === 0) {
+    return sections
+  }
+
+  const withoutGlutenFreeNotes = sections.map((section) => ({
+    ...section,
+    lines: section.lines.filter((line) => !glutenFreeNotes.includes(line))
+  }))
+
+  return withoutGlutenFreeNotes.map((section) =>
+    section.title === "PASTAS"
+      ? { ...section, lines: [glutenFreeNotes[0], ...section.lines] }
+      : section
+  )
+}
+
+function organizeTrayMenu(sections: MenuSection[]) {
+  const trayInformation = sections.find((section) => section.title === "Tray Menu")?.lines ?? []
+  const menuSections = sections
+    .filter((section) => section.title !== "Tray Menu")
+    .map((section) => ({
+      ...section,
+      lines: section.lines
+        .filter((line) => line.title !== "Dessert Menu Dinner Menu")
+        .map((line) =>
+          line.title === "Penne Classico GF"
+            ? {
+                ...line,
+                description: "Seasoned Sweet Sausage and Tomatoes in a Fresh Pink Sauce"
+              }
+            : line
+        )
+    }))
+
+  return trayInformation.length > 0
+    ? [...menuSections, { lines: trayInformation, title: "Tray Information" }]
+    : menuSections
 }
 
 function normalizeHeading(line: string) {
