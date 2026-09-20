@@ -262,21 +262,6 @@ export default function CateringPackagesPage() {
           </div>
         </section>
 
-        <section className="bg-paper px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <SectionHeading eyebrow="Wine Menu" title="Wine selections for events." text="Use these selections as a planning reference for private dining, bar service, and special event conversations." />
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {wineMenu.map((item) => (
-                <article className="reveal-on-scroll reveal-soft border border-ink/10 bg-cream p-6 shadow-lg shadow-ink/5" key={item.title}>
-                  <h3 className="font-heading text-3xl font-black">{item.title}</h3>
-                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/78">
-                    {item.items.map((detail) => <li key={detail}>{detail}</li>)}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
         <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionHeading eyebrow="More Options" title="Add-ons." text="Package add-ons are connected here so visitors can move directly into the right catering option." />
