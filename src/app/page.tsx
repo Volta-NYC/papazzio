@@ -203,8 +203,8 @@ function InfoCard({ className = "", lines, title }: { className?: string; lines:
             <div className="border-t border-ink/12 pt-3" key={item.label}>
               <p className="text-xs font-black uppercase tracking-[0.16em] text-ink/72">{item.label}</p>
               <p className="font-heading text-4xl font-black leading-none text-ink sm:text-5xl">
-                <span>{item.value.replace(/(AM|PM)/g, "")}</span>
-                <span className="ml-1 text-xl sm:text-2xl">{item.value.match(/AM|PM/)?.[0]}M</span>
+                <span>{formatHours(item.value).time}</span>
+                <span className="ml-1 text-xl sm:text-2xl">{formatHours(item.value).period}</span>
               </p>
             </div>
           ))}
@@ -218,4 +218,13 @@ function InfoCard({ className = "", lines, title }: { className?: string; lines:
       )}
     </article>
   )
+}
+
+function formatHours(value: string) {
+  const period = value.match(/AM|PM/)?.[0] ?? ""
+
+  return {
+    period,
+    time: value.replaceAll("AM", "").replaceAll("PM", "")
+  }
 }
