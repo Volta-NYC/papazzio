@@ -70,6 +70,25 @@ const dessertItems = [
   "*Ala Mode"
 ]
 
+const titledMenuItems: Record<string, string[]> = {
+  "dinner-menu": [
+    "Linguine and Meatballs",
+    "Gnocchi Bolognese",
+    "Tortellini alla Panna",
+    "Vitello alla Francese"
+  ],
+  "lunch-menu": [
+    "Pasta Fagioli",
+    "Veal Piccata",
+    "Veal Parmigiana",
+    "Shrimp Parmigiana",
+    "Veal Francaise",
+    "Veal Marsala",
+    "Gnocchi Bolognese",
+    "Tortellini alla Panna"
+  ]
+}
+
 const introLabels = [
   "Small trays",
   "All tray orders",
@@ -78,6 +97,8 @@ const introLabels = [
   "Prices may change",
   "Gluten-Free:",
   "All bottles",
+  "50% off with the purchase of one entree.",
+  "Wednesdays only.",
   "50% off all Wine",
   "Weekdays 4-7 PM",
   "Holidays Excluded",
@@ -271,7 +292,9 @@ function parseLine(line: string, slug: string): MenuLine {
 
     if (dessertItem) {
       return {
-        description: line.slice(dessertItem.length).trim() || undefined,
+        description: dessertItem.startsWith("Gluten Free")
+          ? undefined
+          : line.slice(dessertItem.length).trim() || undefined,
         title: dessertItem
       }
     }
@@ -286,6 +309,15 @@ function parseLine(line: string, slug: string): MenuLine {
   const price = normalizePrice(priced[1])
   const body = priced[2].trim()
   const cleanBody = body.replace(/\s+\$?\s?\d{1,3}(?:\.\d{2})?(?:\s?\/\s?\$?\s?\d{1,3}(?:\.\d{2})?)*\s*$/g, "").trim()
+
+  const titledItem = titledMenuItems[slug]?.find((item) => cleanBody.startsWith(`${item} `))
+  if (titledItem) {
+    return {
+      description: cleanBody.slice(titledItem.length).trim(),
+      price,
+      title: titledItem
+    }
+  }
 
   const glutenFreeIndex = cleanBody.indexOf(" GF ")
   if (glutenFreeIndex > 0) {
