@@ -268,9 +268,20 @@ function lineBreaks(content: string, slug: string) {
   }
 
   if (slug === "dessert-menu") {
+    const protectedGlutenFreeDesserts = dessertItems.filter((item) => item.startsWith("Gluten Free"))
+
+    for (const item of protectedGlutenFreeDesserts) {
+      const protectedItem = item.replaceAll(" ", "__")
+      text = text
+        .replaceAll(` ${item}`, `\n${protectedItem}`)
+        .replaceAll(`\n${item}`, `\n${protectedItem}`)
+    }
+
     for (const item of dessertItems) {
       text = text.replaceAll(` ${item}`, `\n${item}`)
     }
+
+    text = text.replaceAll("__", " ")
   }
 
   return text
