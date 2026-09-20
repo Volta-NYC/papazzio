@@ -393,15 +393,52 @@ function organizeTrayMenu(sections: MenuSection[]) {
     .map((section) => ({
       ...section,
       lines: section.lines
-        .filter((line) => line.title !== "Dessert Menu Dinner Menu")
-        .map((line) =>
-          line.title === "Penne Classico GF"
-            ? {
-                ...line,
-                description: "Seasoned Sweet Sausage and Tomatoes in a Fresh Pink Sauce"
-              }
-            : line
+        .filter(
+          (line) =>
+            line.title !== "Dessert Menu Dinner Menu" &&
+            line.title !== "With Marinara Sauce" &&
+            line.title !== "Homemade Tender Meatballs in a Rich Tomato Marinara Sauce"
         )
+        .flatMap((line) => {
+          if (line.title.startsWith("Assorted Wraps ")) {
+            return {
+              description: "Salmon Dill Wrap, Broadway Steak Wrap, Chicken Caesar, Chicken Goat Cheese Pecan, Grilled Vegetable Wrap. Five wraps in a half tray or ten wraps in a full tray.",
+              price: "$55 / $110",
+              title: "Assorted Wraps"
+            }
+          }
+
+          if (line.title === "Veal Piccata GF") {
+            return [
+              {
+                ...line,
+                description: "Medallions of Veal with Capers in a Lemon, White Wine Sauce"
+              },
+              {
+                description: "With Peppers and Onions in a Barbecue Sauce",
+                price: "Market price",
+                title: "Marinated Skirt Steak (Sliced) GF"
+              }
+            ]
+          }
+
+          if (line.title.startsWith("Horseradish Crusted Salmon Broiled")) {
+            return {
+              ...line,
+              description: "Broiled and Topped with a Horseradish Bread Crumb Topping",
+              title: "Horseradish Crusted Salmon"
+            }
+          }
+
+          if (line.title === "Penne Classico GF") {
+            return {
+              ...line,
+              description: "Seasoned Sweet Sausage and Tomatoes in a Fresh Pink Sauce"
+            }
+          }
+
+          return line
+        })
     }))
 
   return trayInformation.length > 0
