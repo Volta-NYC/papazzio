@@ -30,7 +30,9 @@ a {
 
 a:focus-visible,
 button:focus-visible,
-iframe:focus-visible {
+iframe:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
   outline: 3px solid #f0c35a;
   outline-offset: 4px;
 }
@@ -320,7 +322,7 @@ img {
 }
 
 .secondary-special::after {
-  background: linear-gradient(to top, rgb(0 0 0 / 0.92), rgb(0 0 0 / 0.62) 64%, rgb(0 0 0 / 0.24));
+  background: linear-gradient(to top, rgb(0 0 0 / 0.78), rgb(0 0 0 / 0.28) 64%, transparent);
   content: "";
   inset: 0;
   position: absolute;
@@ -330,7 +332,7 @@ img {
 .secondary-special img {
   height: 100%;
   max-width: none;
-  opacity: 0.68;
+  opacity: 1;
   width: 100%;
 }
 

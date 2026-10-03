@@ -39,6 +39,7 @@ export default function MenuPage() {
         <section className="reveal-on-scroll reveal-soft px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.7fr_1fr]">
             <div className="reveal-on-scroll reveal-left">
+              <img alt="Papazzio" className="mb-8 h-20 w-64 object-contain object-left" src={images.logo} />
               <SectionHeading title="Gluten Free Menu Available." text="For celiac and gluten intolerant customers, Papazzio offers a large selection of gluten-free options. Anything with a GF indicates it is available gluten-free. Please be sure to let your server know you are ordering gluten-free." />
             </div>
             <div className="grid gap-5 md:grid-cols-3">

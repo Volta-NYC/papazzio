@@ -8,7 +8,7 @@ import { images, site } from "@/lib/content"
 const packages = [
   {
     title: "Premiere Package - Afternoon",
-    price: "$43.95 per person",
+    price: "$41.95 per person",
     details: [
       "Available Saturdays and Sundays, 12-4 pm or 1-5 pm.",
       "30-adult minimum for exclusive use.",
@@ -45,7 +45,7 @@ const packages = [
   },
   {
     title: "Buffet Package",
-    price: "$41.95 per person",
+    price: "$45.95 per person",
     details: [
       "Available Saturdays and Sundays from 12-4 pm or 1-5 pm.",
       "30-adult minimum for exclusive use.",
@@ -193,11 +193,42 @@ const cakeMenu = [
   }
 ]
 
-const supportMenus = [
+const additionalOptions = [
   {
-    title: "Additional Options",
-    href: "https://www.papazzio.com/additionals-menu",
-    details: ["Family-style appetizers", "Passed hors d'oeuvres", "Open bar options", "Fruit, cookies, pastries, valet, and color napkin add-ons"]
+    title: "Appetizers",
+    items: [
+      { title: "Bruschetta Appetizer", description: "Served family style." },
+      { title: "Mozzarella & Tomato Platter", description: "Served family style." },
+      { title: "Cold Antipasto", description: "Served family style." },
+      {
+        title: "Hot Antipasto",
+        description: "Served family style. Choose three: Grilled Portobello Mushrooms, Fried Calamari, Baked Clams, or Mussels."
+      },
+      {
+        title: "Passed Hors d'Oeuvres",
+        description: "One hour. Choose four: Mozzarella Knots & Sun-dried Tomato, Potato Puffs, Pigs in a Blanket, Mozzarella Sticks, Tomato Bruschetta, Olive Bruschetta, Egg Rolls, or Spanakopita."
+      }
+    ]
+  },
+  {
+    title: "Bar",
+    items: [
+      { title: "Open Bar", description: "Consumption charge." },
+      { title: "Champagne Punch" },
+      { title: "Red and White Wine on the Table" },
+      { title: "Beer and Wine" }
+    ]
+  },
+  {
+    title: "Other",
+    items: [
+      { title: "Cake Cutting", description: "If bringing your own cake." },
+      { title: "Cappuccino and Espresso" },
+      { title: "Fruit Platter" },
+      { title: "Cookies and Pastries", description: "Served family style." },
+      { title: "Valet", description: "Valet service for the day." },
+      { title: "Color Cloth Napkins" }
+    ]
   }
 ]
 
@@ -249,30 +280,49 @@ export default function CateringPackagesPage() {
         <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionHeading eyebrow="Cake Menu" title="Occasion cake options." text="Included occasion cakes can be customized with classic cake bases, fillings, and toppings. Premium cakes are available for an additional charge." />
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {cakeMenu.map((item) => (
+            <article className="reveal-on-scroll reveal-soft mt-10 border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5">
+              <h3 className="font-heading text-3xl font-black">{cakeMenu[0].title}</h3>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {cakeMenu[0].items.map((cake) => (
+                  <p className="border-l-4 border-tomato bg-cream p-5 font-heading text-3xl font-black" key={cake}>{cake}</p>
+                ))}
+              </div>
+            </article>
+            <div className="mt-5 grid items-start gap-5 lg:grid-cols-[1.5fr_1fr]">
+              {cakeMenu.slice(1, 3).map((item) => (
                 <article className="reveal-on-scroll reveal-soft border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5" key={item.title}>
                   <h3 className="font-heading text-3xl font-black">{item.title}</h3>
-                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/78">
+                  <ul className={`mt-5 grid gap-x-6 gap-y-2 text-sm font-bold leading-6 text-ink/78 ${item.title === "Fillings" ? "sm:grid-cols-2" : ""}`}>
                     {item.items.map((detail) => <li key={detail}>{detail}</li>)}
                   </ul>
                 </article>
               ))}
             </div>
+            <article className="reveal-on-scroll reveal-soft mt-5 border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5">
+              <h3 className="font-heading text-3xl font-black">{cakeMenu[3].title}</h3>
+              <ul className="mt-5 grid gap-x-6 gap-y-2 text-sm font-bold leading-6 text-ink/78 sm:grid-cols-2 lg:grid-cols-3">
+                {cakeMenu[3].items.map((cake) => <li key={cake}>{cake}</li>)}
+              </ul>
+            </article>
           </div>
         </section>
 
-        <section className="bg-cream px-4 py-20 sm:px-6 lg:px-8">
+        <section className="bg-paper px-4 py-20 sm:px-6 lg:px-8" id="additional-options">
           <div className="mx-auto max-w-7xl">
-            <SectionHeading eyebrow="More Options" title="Add-ons." text="Package add-ons are connected here so visitors can move directly into the right catering option." />
-            <div className="mt-10 grid max-w-2xl gap-5">
-              {supportMenus.map((item) => (
-                <a className="reveal-on-scroll reveal-soft border border-ink/10 bg-paper p-6 shadow-lg shadow-ink/5 transition hover:-translate-y-1 hover:border-tomato" href={item.href} key={item.title}>
-                  <h3 className="font-heading text-3xl font-black">{item.title}</h3>
-                  <ul className="mt-5 grid gap-2 text-sm font-bold leading-6 text-ink/78">
-                    {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+            <SectionHeading eyebrow="For On-Site Events" title="Additional options." text="Customize your event with family-style appetizers, bar service, and finishing touches. Contact our catering manager to arrange your selections." />
+            <div className="mt-10 grid items-start gap-5 lg:grid-cols-[1.4fr_1fr_1fr]">
+              {additionalOptions.map((group) => (
+                <article className="reveal-on-scroll reveal-soft border border-ink/10 bg-cream p-6 shadow-lg shadow-ink/5" key={group.title}>
+                  <h3 className="font-heading text-3xl font-black">{group.title}</h3>
+                  <ul className="mt-5 grid gap-4 text-sm font-bold leading-6 text-ink/78">
+                    {group.items.map((item) => (
+                      <li className="border-t border-ink/12 pt-4" key={item.title}>
+                        <p className="font-black text-ink">{item.title}</p>
+                        {"description" in item ? <p className="mt-1">{item.description}</p> : null}
+                      </li>
+                    ))}
                   </ul>
-                </a>
+                </article>
               ))}
             </div>
             <p className="mt-10 bg-tomato/10 p-5 text-sm font-bold leading-6 text-ink/70">

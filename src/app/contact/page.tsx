@@ -15,8 +15,9 @@ export default function ContactPage() {
                 <a href={site.emailHref}>{site.email}</a>
                 <a href={site.phoneHref}>{site.phone}</a>
               </div>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <a className="button button-gold" href={site.phoneHref}>Call {site.phone}</a>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <a className="button button-gold" href={site.reservationsUrl}>Reserve on OpenTable</a>
+                <a className="button button-outline-light" href={site.phoneHref}>Call {site.phone}</a>
                 <a className="button button-outline-light" href={site.mapsUrl} rel="noreferrer" target="_blank">Get Directions<span className="sr-only">, opens in a new tab</span></a>
               </div>
             </div>

@@ -24,6 +24,7 @@ export function SiteFooter() {
               </Link>
             ))}
             <a className="transition hover:text-cream" href={site.giftCardsUrl}>Gift Cards</a>
+            <Link className="transition hover:text-cream" href="/contact">Contact & Directions</Link>
           </div>
         </div>
 
@@ -50,9 +51,10 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-cream/10 pt-6 text-xs uppercase tracking-[0.18em] text-cream/72 sm:flex-row sm:items-center sm:justify-between">
         <p>©2025 All Rights Reserved.</p>
-        <div className="flex gap-5">
+        <div className="flex flex-wrap gap-5">
           <a className="transition hover:text-cream" href={site.facebookUrl}>Facebook</a>
           <a className="transition hover:text-cream" href={site.instagramUrl}>Instagram</a>
+          <a className="transition hover:text-cream" href={site.tiktokUrl}>TikTok</a>
           <span className="normal-case tracking-normal">Made by <a href="https://www.novusnyc.org/" target="_blank" rel="noreferrer" className="text-volta-green">Novus<span className="sr-only">, opens in a new tab</span></a></span>
         </div>
       </div>

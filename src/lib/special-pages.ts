@@ -1,4 +1,4 @@
-import { images } from "@/lib/content"
+import { happyHourItems, images, site } from "@/lib/content"
 
 export type SpecialPage = {
   actions?: {
@@ -98,7 +98,7 @@ export const specialPages = [
     ctaLabel: "View Seasonal Menu",
     actions: [
       { href: "/specials/live-music/performers", label: "View This Month's Performers" },
-      { href: "/contact", label: "Make a Reservation" }
+      { href: site.reservationsUrl, label: "Make a Reservation" }
     ],
     sections: [
       {
@@ -166,18 +166,7 @@ export const specialPages = [
     sections: [
       {
         title: "$10 Happy Hour Menu",
-        items: [
-          "Arancini Carbonara",
-          "Formaggio",
-          "Shrimp Scampi Slider",
-          "Pollo Spiedini Amalfi",
-          "Limoncello Fire Ribs",
-          "Risotto Amalfitano",
-          "Calabrian Honey Polpette",
-          "Mediterranean Shrimp",
-          "Pizzette e Burrata",
-          "Lobster Ravioli Bites"
-        ]
+        items: happyHourItems
       }
     ]
   },
@@ -283,7 +272,7 @@ export const specialPages = [
       { href: "/specials/live-music/performers", label: "View This Month's Performers" },
       { href: "#planning-ahead", label: "View Next Month's Live Music Schedule" },
       { href: "#meet-our-talent", label: "Meet The Performers" },
-      { href: "/contact", label: "Make a Reservation" }
+      { href: site.reservationsUrl, label: "Make a Reservation" }
     ],
     sections: [
       {

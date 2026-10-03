@@ -45,7 +45,7 @@ export default function SpecialsPage() {
               {moreSpecials.map((special, index) => (
                 <article className={`secondary-special reveal-on-scroll ${index % 2 === 0 ? "reveal-left" : "reveal-right"} group`} key={special.title}>
                   <Photo alt={special.title} className="absolute inset-0 transition duration-500 group-hover:scale-105" src={special.image} />
-                  <div className="relative mt-auto">
+                  <div className="relative z-10 mt-auto">
                     <p className="text-xs font-black uppercase tracking-[0.2em] text-gold">{special.subtitle}</p>
                     <h3 className="mt-3 font-heading text-3xl font-black leading-none text-cream">{special.title}</h3>
                     <p className="mt-4 text-sm font-bold leading-6 text-cream">{special.details[0]}</p>

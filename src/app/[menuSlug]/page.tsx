@@ -30,7 +30,7 @@ const baseSectionHeadings = [
   "DESSERT MENU",
   "Wine Menu",
   "Happy Hour Menu",
-  "$10 HAPPY HOUR MENU STARTING JULY 1ST",
+  "$10 HAPPY HOUR MENU",
   "ANTIPASTI",
   "INSALATE",
   "SALADS",
@@ -66,8 +66,7 @@ const dessertItems = [
   "Gluten Free Tiramisu GF",
   "Gluten Free Oreo Mousse GF",
   "Lemon Sorbet GF",
-  "Ice Cream GF",
-  "*Ala Mode"
+  "Ice Cream GF"
 ]
 
 const titledMenuItems: Record<string, string[]> = {
@@ -292,13 +291,6 @@ function lineBreaks(content: string, slug: string) {
 
 function parseLine(line: string, slug: string): MenuLine {
   if (slug === "dessert-menu") {
-    if (line.startsWith("*Ala Mode")) {
-      return {
-        description: "Vanilla or Chocolate",
-        title: "A la Mode"
-      }
-    }
-
     const dessertItem = dessertItems.find((item) => line === item || line.startsWith(`${item} `))
 
     if (dessertItem) {
@@ -378,7 +370,7 @@ function organizeMenuSections(sections: MenuSection[], slug: string) {
 
 function moveGlutenFreePastaNote(sections: MenuSection[]) {
   const glutenFreeNotes = sections.flatMap((section) =>
-    section.lines.filter((line) => line.isNote && line.title.startsWith("To substitute Gluten Free penne or spaghetti"))
+    section.lines.filter((line) => line.isNote && line.title.startsWith("To substitute Gluten Free penne"))
   )
 
   if (glutenFreeNotes.length === 0) {

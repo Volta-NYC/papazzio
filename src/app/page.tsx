@@ -80,7 +80,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.85fr_1fr] lg:items-center">
             <div className="reveal-on-scroll reveal-left">
               <SectionHeading eyebrow="About" title="A Bell Boulevard restaurant with a family legacy." text={storyParagraphs.slice(0, 3).join(" ")} />
-              <Link className="button button-dark mt-8" href="/contact">Reserve a Table</Link>
+              <a className="button button-dark mt-8" href={site.reservationsUrl}>Reserve a Table</a>
             </div>
             <div className="reveal-on-scroll reveal-right relative">
               <div className="about-image-frame">
@@ -124,7 +124,7 @@ export default function HomePage() {
               {featuredSpecials.map((item, index) => (
                 <article className={`experience-card reveal-on-scroll ${index % 2 === 0 ? "reveal-left" : "reveal-right"} group`} key={item.title}>
                   <Photo alt={item.title} className="absolute inset-0 transition duration-500 group-hover:scale-105" src={item.image} />
-                  <div className="relative mt-auto">
+                  <div className="relative z-10 mt-auto">
                     <p className="text-xs font-black uppercase tracking-[0.2em] text-gold">{item.subtitle}</p>
                     <h3 className="mt-3 font-heading text-4xl font-black leading-none">{item.title}</h3>
                     <p className="mt-4 text-sm font-bold leading-6 text-cream/76">{item.description}</p>

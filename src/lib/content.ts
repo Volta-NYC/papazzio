@@ -11,8 +11,10 @@ export const site = {
   emailHref: "mailto:info@papazzio.com",
   orderUrl: "https://order.toasttab.com/online/papazzio#!/",
   giftCardsUrl: "https://www.toasttab.com/papazzio/giftcards",
+  reservationsUrl: "https://www.opentable.com/papazzio-italian-restaurant",
   facebookUrl: "https://www.facebook.com/papazziorestaurant/",
   instagramUrl: "https://www.instagram.com/papazzio_restaurant/",
+  tiktokUrl: "https://www.tiktok.com/@papazzio.bayside",
   googleReviewsUrl:
     "https://www.google.com/search?q=Papazzio+Restaurant+%26+Caterer+Reviews",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=39-38+Bell+Boulevard+Bayside+NY+11361",
@@ -26,7 +28,12 @@ export const navItems = [
   { label: "Menu", href: "/menu" },
   { label: "Specials", href: "/specials" },
   { label: "Catering", href: "/catering" },
-  { label: "Reservations", href: "/contact" }
+  { label: "Reservations", href: site.reservationsUrl }
+]
+
+export const happyHourItems = [
+  "Formaggio", "Ravioli", "Ribs", "Polpette", "Bruschetta",
+  "Arangini", "Pollo", "Pasta", "Risotto", "Gamberi"
 ]
 
 export const hours = [
@@ -212,19 +219,6 @@ export const recentEventImages = [
   { alt: "Papazzio pasta served for a private party", src: images.pasta },
   { alt: "Papazzio wine room private event", src: images.wineRoom },
   { alt: "Papazzio dining room celebration", src: images.diningRoom }
-]
-
-export const liveMusicPerformers = [
-  {
-    bio: "A local Papazzio feature performer highlighted for Thursday live music with Ailatan/Natalia.",
-    dates: ["Current monthly dates: call Papazzio to confirm"],
-    name: "Leo"
-  },
-  {
-    bio: "A local artist featured alongside Leo for Papazzio's Thursday live music evenings.",
-    dates: ["Current monthly dates: call Papazzio to confirm"],
-    name: "Ailatan / Natalia"
-  }
 ]
 
 export const storyParagraphs = [
